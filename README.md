@@ -82,7 +82,14 @@ The only potential blocker for today is computer limitations, as it is still the
 
 ##### Sprint Review
 
+Despite starting the day on track, it became clear that I needed to change some links within my database such as foreign keys. This meant I had to spend more time than planned in the morning on correcting it. When advancing from this I created more methods and tests, which once again took more time than planned.
 
+The WPF was then started and the structure of the application was laid out as planned. From this I started on the backcode of the programme and connected the business layer and the GUI.
 
 ##### Sprint Retrospective
+
+* Stop: I spent too long focusing on the change of data in the database and implementing testing on this.
+* Start: Researching problems as I am completing them instead of stopping my work to research the problem
+* Start: I learnt today to add extra time to the plan so if there are problems there is allocated time for it and if not used, this time can be spent on finer details on the planned stages.
+* Continue: Pacing of work completed, I got as far as I wanted to on the WPF but not the other sections due to them being pushed back by the database update.
 
