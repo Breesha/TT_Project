@@ -77,12 +77,51 @@ namespace TT_Project_Model
                 //db.Bikes.Add(newBike);
                 //db.SaveChanges();
 
-                var newEntry = new Entry
+                //var newEntry = new Entry
+                //{
+                //    RiderId = 1,
+                //    RaceId = 1
+                //};
+                //db.Entries.Add(newEntry);
+                //db.SaveChanges();
+
+                var newRider = new RiderAccount
                 {
-                    RiderId = 1,
-                    RaceId = 1
+                    Email = "deanharrison@hotmail.com",
+                    Passwrd = "password2",
+                    FirstName = "Dean",
+                    LastName = "Harrison",
+                    DateOfBirth = "01/05/1985",
+                    Nationality = "English",
+                    Experience = "SENIOR - Superbike winner 2019"
                 };
-                db.Entries.Add(newEntry);
+                db.RiderAccounts.Add(newRider);
+                db.SaveChanges();
+
+                var newRider2 = new RiderAccount
+                {
+                    Email = "michaeldunlop@hotmail.com",
+                    Passwrd = "password3",
+                    FirstName = "Michael",
+                    LastName = "Dunlop",
+                    DateOfBirth = "01/06/1985",
+                    Nationality = "Irish",
+                    Experience = "SENIOR - Superbike winner 2018"
+                };
+                db.RiderAccounts.Add(newRider2);
+                db.SaveChanges();
+
+                var newRider3 = new RiderAccount
+                {
+                    Email = "peterhickman@hotmail.com",
+                    Passwrd = "password4",
+                    FirstName = "Peter",
+                    LastName = "Hickman",
+                    DateOfBirth = "01/07/1980",
+                    Nationality = "English",
+                    Experience = "SENIOR - Superbike second place 2019, Supersport winner 2019"
+                };
+                db.RiderAccounts.Add(newRider3);
                 db.SaveChanges();
             }
         }

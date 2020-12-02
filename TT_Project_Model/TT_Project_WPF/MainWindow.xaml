@@ -5,8 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TT_Project_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="560" Width="600">
+    <Grid Margin="10,10,10,10">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
+
+
+        <TextBlock Text="Rider Profile" Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" Style="{StaticResource headerTextStyle}"/>
+        <ListBox x:Name="ListViewRiders" Background="Beige" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+
+        <TextBlock Text="Details" Grid.Column="0" Grid.Row="2" Style="{StaticResource headerTextStyle}"/>
+            <TextBlock Text="RiderID" Grid.Column="0" Grid.Row="3"/>
+            <Label x:Name="LabelId" Content="" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"/>
+            <TextBlock Text="First Name" Grid.Column="0" Grid.Row="4"/>
+        <Label x:Name="LabelFName" Content="" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
+            <TextBlock Text="Last Name" Grid.Column="0" Grid.Row="5"/>
+        <Label x:Name="LabelLName" Content="" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"/>
+            <TextBlock Text="Date of Birth" Grid.Column="0" Grid.Row="6"/>
+        <Label x:Name="LabelDofB" Content="Label" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
+            <TextBlock Text="Nationality" Grid.Column="0" Grid.Row="7"/>
+        <Label x:Name="LabelNation" Content="Label" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2"/>
+            <TextBlock Text="Competition Experience" Grid.Column="0" Grid.Row="8" TextWrapping="Wrap"/>
+        <Label x:Name="LabelExp" Content="Label" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+        <TextBlock Text="Add Entry" Grid.Column="4" Grid.Row="0" Style="{StaticResource headerTextStyle}"/>
+            <TextBlock Text="RiderID" Grid.Column="4" Grid.Row="1"/>
+            <Label Content="Label" Grid.Column="5" Grid.Row="1"/>
+            <TextBlock Text="RaceID" Grid.Column="4" Grid.Row="2"/>
+            <Label Content="Label" Grid.Column="5" Grid.Row="2"/>
+        <TextBlock Text="View Entries" Grid.Column="4" Grid.Row="3" Style="{StaticResource headerTextStyle}"/>
+            <ListBox x:Name="ListViewEntries" Background="Beige" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Add Bike" Grid.Column="4" Grid.Row="5" Style="{StaticResource headerTextStyle}"/>
+            <TextBlock Text="RiderID" Grid.Column="4" Grid.Row="6"/>
+            <Label Content="Label" Grid.Column="5" Grid.Row="6"/>
+            <TextBlock Text="Bike Name" Grid.Column="4" Grid.Row="7"/>
+            <Label Content="Label" Grid.Column="5" Grid.Row="7"/>
+            <TextBlock Text="Bike Sponsor" Grid.Column="4" Grid.Row="8"/>
+            <Label Content="Label" Grid.Column="5" Grid.Row="8"/>
+        <TextBlock Text="View Bikes Entered" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="9" Style="{StaticResource headerTextStyle}"/>
+            <ListBox x:Name="ListBikeEntries" Background="Beige" Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="2"/>
+        
 
     </Grid>
 </Window>

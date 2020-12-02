@@ -8,7 +8,7 @@ namespace TT_Project_Business
 {
     public class CRUDManager
     {
-        public RiderAccount SelectRider { get; set; }
+        public RiderAccount SelectedRider { get; set; }
 
         public List<RiderAccount> RetrieveAllRider()
         {
@@ -18,7 +18,7 @@ namespace TT_Project_Business
             }
         }
 
-        public StaffAccount SelectStaff { get; set; }
+        public StaffAccount SelectedStaff { get; set; }
 
         public List<StaffAccount> RetrieveAllStaff()
         {
@@ -33,6 +33,14 @@ namespace TT_Project_Business
             using (var db = new TT_ProjectContext())
             {
                 return db.Entries.ToList();
+            }
+        }
+
+        public List<Bike> RetrieveAllBikes()
+        {
+            using (var db = new TT_ProjectContext())
+            {
+                return db.Bikes.ToList();
             }
         }
 
