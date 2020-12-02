@@ -54,7 +54,6 @@ C:\TT_Project\TT_Project_Model\TT_Project_Model\bin\Debug\netcoreapp3.1\runtimes
 C:\TT_Project\TT_Project_Model\TT_Project_Model\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\TT_Project\TT_Project_Model\TT_Project_Model\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\TT_Project\TT_Project_Model\TT_Project_Model\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.csprojAssemblyReference.cache
 C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.AssemblyInfoInputs.cache
 C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.AssemblyInfo.cs
 C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.csproj.CoreCompileInputs.cache
@@ -62,3 +61,4 @@ C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Proje
 C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.dll
 C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.pdb
 C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.genruntimeconfig.cache
+C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.csprojAssemblyReference.cache

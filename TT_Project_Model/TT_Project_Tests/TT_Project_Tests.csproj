@@ -9,7 +9,12 @@
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0"/>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TT_Project_Business\TT_Project_Business.csproj" />
+    <ProjectReference Include="..\TT_Project_Model\TT_Project_Model.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,5 +10,7 @@ namespace TT_Project_Model
         public int StaffId { get; set; }
         public string Email { get; set; }
         public string Passwrd { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

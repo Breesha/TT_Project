@@ -8,23 +8,23 @@ namespace TT_Project_Business
 {
     public class CRUDManager
     {
-        public Rider SelectRider { get; set; }
+        public RiderAccount SelectRider { get; set; }
 
-        public List<Rider> RetrieveAllRider()
+        public List<RiderAccount> RetrieveAllRider()
         {
             using (var db = new TT_ProjectContext())
             {
-                return db.Riders.ToList();
+                return db.RiderAccounts.ToList();
             }
         }
 
-        public Rider SelectStaff { get; set; }
+        public StaffAccount SelectStaff { get; set; }
 
-        public List<staff> RetrieveAllStaff()
+        public List<StaffAccount> RetrieveAllStaff()
         {
             using (var db = new TT_ProjectContext())
             {
-                return db.staff.ToList();
+                return db.StaffAccounts.ToList();
             }
         }
 
@@ -36,56 +36,56 @@ namespace TT_Project_Business
             }
         }
 
-        public string CreatRiderAccount(string email, string password)
+        public void CreateRiderAccount(string email, string password, string firstname, string lastname, string dateofbirth, string nationality, string experience)
         {
             using (var db = new TT_ProjectContext())
             {
-                if (password.Length > 5)
-                {
+                //string message = "";
+
+                //foreach (var item in db.RiderAccounts)
+                //{
+                //    if (item.Email == email)
+                //    {
+                //        message = "Email already used";
+                //    }
+                
+                
                     var newRiderAccount = new RiderAccount
                     {
                         Email = email.Trim(),
-                        Passwrd = password.Trim()
+                        Passwrd = password.Trim(),
+                        FirstName = firstname.Trim(),
+                        LastName = lastname.Trim(),
+                        DateOfBirth = dateofbirth,
+                        Nationality = nationality.Trim(),
+                        Experience = experience.Trim()
                     };
-
+                var dOfB = Convert.ToDateTime(dateofbirth);
+                if (((DateTime.Now-dOfB).TotalDays/365)>21 && password.Length>5)
+                {
                     db.RiderAccounts.Add(newRiderAccount);
                     db.SaveChanges();
-                    return "Password accepted";
                 }
                 else
                 {
-                    return "Password is too short";
+                    db.SaveChanges();
                 }
+                
             }
         }
 
-        public void CreateRiderInfo(int riderid, string firstname, string lastname, DateTime dateofbirth, string nationality, string experience)
-        {
+      
 
-            using (var db = new TT_ProjectContext())
-            {
-                var newRider = new Rider
-                {
-                    FirstName = firstname.Trim(),
-                    LastName = lastname.Trim(),
-                    DateOfBirth = dateofbirth,
-                    Nationality = nationality.Trim(),
-                    Experience = experience
-                };
-
-                db.Riders.Add(newRider);
-                db.SaveChanges();
-            }
-        }
-
-        public void CreateStaffAccount(string email, string password)
+        public void CreateStaffAccount(string email, string password, string firstname, string lastname)
         {
             using (var db = new TT_ProjectContext())
             {
                 var newStaffAccount = new StaffAccount
                 {
                     Email = email.Trim(),
-                    Passwrd = password.Trim()
+                    Passwrd = password.Trim(),
+                    FirstName = firstname.Trim(),
+                    LastName = lastname.Trim()
                 };
 
                 db.StaffAccounts.Add(newStaffAccount);
@@ -93,22 +93,37 @@ namespace TT_Project_Business
             }
         }
 
-        public void CreateStaffInfo(int staffid, string firstname, string lastname)
+        public void CreateBike(string make, string sponsor)
         {
-
             using (var db = new TT_ProjectContext())
             {
-                var newStaff = new staff
+                var newBike = new Bike
                 {
-                    FirstName = firstname.Trim(),
-                    LastName = lastname.Trim()
+                    BikeMake = make.Trim(),
+                    BikeSponsor = sponsor.Trim()
                 };
 
-                db.staff.Add(newStaff);
+                db.Bikes.Add(newBike);
                 db.SaveChanges();
             }
         }
-
-
     }
 }
+
+
+
+//public void CreateStaffInfo(int staffid, string firstname, string lastname)
+//{
+
+//    using (var db = new TT_ProjectContext())
+//    {
+//        var newStaff = new staff
+//        {
+//            FirstName = firstname.Trim(),
+//            LastName = lastname.Trim()
+//        };
+
+//        db.staff.Add(newStaff);
+//        db.SaveChanges();
+//    }
+//}

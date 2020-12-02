@@ -19,10 +19,8 @@ namespace TT_Project_Model
 
         public virtual DbSet<Bike> Bikes { get; set; }
         public virtual DbSet<Race> Races { get; set; }
-        public virtual DbSet<Rider> Riders { get; set; }
         public virtual DbSet<RiderAccount> RiderAccounts { get; set; }
         public virtual DbSet<StaffAccount> StaffAccounts { get; set; }
-        public virtual DbSet<staff> staff { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -53,7 +51,7 @@ namespace TT_Project_Model
                 entity.HasOne(d => d.Rider)
                     .WithMany(p => p.Bikes)
                     .HasForeignKey(d => d.RiderId)
-                    .HasConstraintName("FK__Bikes__RiderID__2DE6D218");
+                    .HasConstraintName("FK__Bikes__RiderID__7C1A6C5A");
             });
 
             modelBuilder.Entity<Race>(entity =>
@@ -66,11 +64,21 @@ namespace TT_Project_Model
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Rider>(entity =>
+            modelBuilder.Entity<RiderAccount>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.RiderId)
+                    .HasName("PK__RiderAcc__7D726C001B212023");
 
-                entity.Property(e => e.DateOfBirth).HasColumnType("datetime");
+                entity.Property(e => e.RiderId).HasColumnName("RiderID");
+
+                entity.Property(e => e.DateOfBirth)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Experience)
                     .IsRequired()
@@ -90,43 +98,23 @@ namespace TT_Project_Model
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.RaceId).HasColumnName("RaceID");
-
-                entity.Property(e => e.RiderId).HasColumnName("RiderID");
-
-                entity.HasOne(d => d.Race)
-                    .WithMany()
-                    .HasForeignKey(d => d.RaceId)
-                    .HasConstraintName("FK__Riders__RaceID__2B0A656D");
-
-                entity.HasOne(d => d.RiderNavigation)
-                    .WithMany()
-                    .HasForeignKey(d => d.RiderId)
-                    .HasConstraintName("FK__Riders__RiderID__2A164134");
-            });
-
-            modelBuilder.Entity<RiderAccount>(entity =>
-            {
-                entity.HasKey(e => e.RiderId)
-                    .HasName("PK__RiderAcc__7D726C0008AEE44F");
-
-                entity.Property(e => e.RiderId).HasColumnName("RiderID");
-
-                entity.Property(e => e.Email)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.Passwrd)
                     .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
+
+                entity.Property(e => e.RaceId).HasColumnName("RaceID");
+
+                entity.HasOne(d => d.Race)
+                    .WithMany(p => p.RiderAccounts)
+                    .HasForeignKey(d => d.RaceId)
+                    .HasConstraintName("FK__RiderAcco__RaceI__793DFFAF");
             });
 
             modelBuilder.Entity<StaffAccount>(entity =>
             {
                 entity.HasKey(e => e.StaffId)
-                    .HasName("PK__StaffAcc__96D4AAF7B912F10A");
+                    .HasName("PK__StaffAcc__96D4AAF751ED646F");
 
                 entity.Property(e => e.StaffId).HasColumnName("StaffID");
 
@@ -134,18 +122,6 @@ namespace TT_Project_Model
                     .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
-
-                entity.Property(e => e.Passwrd)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
-            });
-
-            modelBuilder.Entity<staff>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToTable("Staff");
 
                 entity.Property(e => e.FirstName)
                     .IsRequired()
@@ -157,12 +133,10 @@ namespace TT_Project_Model
                     .HasMaxLength(30)
                     .IsUnicode(false);
 
-                entity.Property(e => e.StaffId).HasColumnName("StaffID");
-
-                entity.HasOne(d => d.Staff)
-                    .WithMany()
-                    .HasForeignKey(d => d.StaffId)
-                    .HasConstraintName("FK__Staff__StaffID__31B762FC");
+                entity.Property(e => e.Passwrd)
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);
