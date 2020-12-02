@@ -27,7 +27,7 @@ The entries need to be checked to meet the criteria by race management, from whi
 
 ## Sprint Breakdowns
 
-![First_ProjectBoard](C:\Users\User\Desktop\SPARTA\WEEK6\First_ProjectBoard.JPG)
+![First_ProjectBoard](https://user-images.githubusercontent.com/72052373/100859086-b90f9400-3486-11eb-8693-d2ac33a6523c.JPG)
 
 #### Sprint 1 - Tuesday 1st December 2020
 
@@ -60,5 +60,29 @@ Changes were pushed to GitHub, but the commits could be improved to have smaller
 * Start: I can start committing work more often.
 * Due to the data tests in the morning, sprint 1 was shorter than other days so I can add more user stories to my sprint backlog for tomorrow.
 
+![Sprint2_Start](https://user-images.githubusercontent.com/72052373/100859174-d8a6bc80-3486-11eb-9371-f8740a78b314.JPG)
 
+#### Sprint 2 - Wednesday 2nd December 2020
+
+The main focus of this sprint is to create the WPF layer and add functionality to the GUI layer. This involves adding some more methods to the business layer to provide full functionality of the application. The rider profile and entry form is the main goal for the GUI today.
+
+The only potential blocker for today is computer limitations, as it is still the early stages of creation.
+
+##### Sprint Goals
+
+* [ ] Complete user story 0.4
+* [ ] Complete user story 1.1
+* [ ] Complete user story 2.1
+* [ ] Complete user story 3.1
+* [ ] Complete user story 3.3
+* [ ] Update README
+* [ ] Complete Agile review
+* [ ] Complete Agile retrospective
+* [ ] Commit all changes
+
+##### Sprint Review
+
+
+
+##### Sprint Retrospective
 
