@@ -18,6 +18,7 @@ namespace TT_Project_Model
         }
 
         public virtual DbSet<Bike> Bikes { get; set; }
+        public virtual DbSet<Entry> Entries { get; set; }
         public virtual DbSet<Race> Races { get; set; }
         public virtual DbSet<RiderAccount> RiderAccounts { get; set; }
         public virtual DbSet<StaffAccount> StaffAccounts { get; set; }
@@ -51,7 +52,26 @@ namespace TT_Project_Model
                 entity.HasOne(d => d.Rider)
                     .WithMany(p => p.Bikes)
                     .HasForeignKey(d => d.RiderId)
-                    .HasConstraintName("FK__Bikes__RiderID__7C1A6C5A");
+                    .HasConstraintName("FK__Bikes__RiderID__382F5661");
+            });
+
+            modelBuilder.Entity<Entry>(entity =>
+            {
+                entity.Property(e => e.EntryId).HasColumnName("EntryID");
+
+                entity.Property(e => e.RaceId).HasColumnName("RaceID");
+
+                entity.Property(e => e.RiderId).HasColumnName("RiderID");
+
+                entity.HasOne(d => d.Race)
+                    .WithMany(p => p.Entries)
+                    .HasForeignKey(d => d.RaceId)
+                    .HasConstraintName("FK__Entries__RaceID__3552E9B6");
+
+                entity.HasOne(d => d.Rider)
+                    .WithMany(p => p.Entries)
+                    .HasForeignKey(d => d.RiderId)
+                    .HasConstraintName("FK__Entries__RiderID__345EC57D");
             });
 
             modelBuilder.Entity<Race>(entity =>
@@ -67,7 +87,7 @@ namespace TT_Project_Model
             modelBuilder.Entity<RiderAccount>(entity =>
             {
                 entity.HasKey(e => e.RiderId)
-                    .HasName("PK__RiderAcc__7D726C001B212023");
+                    .HasName("PK__RiderAcc__7D726C001236FE32");
 
                 entity.Property(e => e.RiderId).HasColumnName("RiderID");
 
@@ -102,19 +122,12 @@ namespace TT_Project_Model
                     .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
-
-                entity.Property(e => e.RaceId).HasColumnName("RaceID");
-
-                entity.HasOne(d => d.Race)
-                    .WithMany(p => p.RiderAccounts)
-                    .HasForeignKey(d => d.RaceId)
-                    .HasConstraintName("FK__RiderAcco__RaceI__793DFFAF");
             });
 
             modelBuilder.Entity<StaffAccount>(entity =>
             {
                 entity.HasKey(e => e.StaffId)
-                    .HasName("PK__StaffAcc__96D4AAF751ED646F");
+                    .HasName("PK__StaffAcc__96D4AAF7469AD893");
 
                 entity.Property(e => e.StaffId).HasColumnName("StaffID");
 

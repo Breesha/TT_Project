@@ -10,6 +10,7 @@ namespace TT_Project_Model
         public RiderAccount()
         {
             Bikes = new HashSet<Bike>();
+            Entries = new HashSet<Entry>();
         }
 
         public int RiderId { get; set; }
@@ -20,9 +21,8 @@ namespace TT_Project_Model
         public string DateOfBirth { get; set; }
         public string Nationality { get; set; }
         public string Experience { get; set; }
-        public int? RaceId { get; set; }
 
-        public virtual Race Race { get; set; }
         public virtual ICollection<Bike> Bikes { get; set; }
+        public virtual ICollection<Entry> Entries { get; set; }
     }
 }

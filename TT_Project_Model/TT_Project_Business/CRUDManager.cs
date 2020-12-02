@@ -28,6 +28,15 @@ namespace TT_Project_Business
             }
         }
 
+        public List<Entry> RetrieveAllEntry()
+        {
+            using (var db = new TT_ProjectContext())
+            {
+                return db.Entries.ToList();
+            }
+        }
+
+
         static void Main(string[] args)
         {
             using (var db = new TT_ProjectContext())
@@ -61,7 +70,7 @@ namespace TT_Project_Business
                         Experience = experience.Trim()
                     };
                 var dOfB = Convert.ToDateTime(dateofbirth);
-                if (((DateTime.Now-dOfB).TotalDays/365)>21 && password.Length>5)
+                if (((DateTime.Now-dOfB).TotalDays/365)>=21 && password.Length>5)
                 {
                     db.RiderAccounts.Add(newRiderAccount);
                     db.SaveChanges();
@@ -93,12 +102,13 @@ namespace TT_Project_Business
             }
         }
 
-        public void CreateBike(string make, string sponsor)
+        public void CreateBike(int riderid, string make, string sponsor)
         {
             using (var db = new TT_ProjectContext())
             {
                 var newBike = new Bike
                 {
+                    RiderId = riderid,
                     BikeMake = make.Trim(),
                     BikeSponsor = sponsor.Trim()
                 };
@@ -107,6 +117,67 @@ namespace TT_Project_Business
                 db.SaveChanges();
             }
         }
+
+        public void DeleteBike(int bikeid)
+        {
+
+            using (var db = new TT_ProjectContext())
+            {
+                var selectedBike =
+            from b in db.Bikes
+            where b.BikeId == bikeid
+            select b;
+
+                db.Bikes.RemoveRange(selectedBike);
+
+
+                db.SaveChanges();
+            }
+        }
+
+        public void CreateRaceEntry(int riderid, int raceid)
+        {
+
+            using (var db = new TT_ProjectContext())
+            {
+                var newEntry = new Entry
+                {
+                    RiderId = riderid,
+                    RaceId = raceid
+                };
+                
+                    db.Entries.Add(newEntry);
+                    db.SaveChanges();
+                
+
+                //foreach (var item in db.Entries)
+                //{
+                //    if(item.RiderId==riderid && item.RaceId== raceid)
+                //    {
+                //        db.Entries.Remove(newEntry);
+                //        db.SaveChanges();
+                //    }
+                   
+                //}
+                
+            }
+        }
+
+        public void DeleteEntry(int entryid)
+        {
+
+            using (var db = new TT_ProjectContext())
+            {
+                var selectedEntry =
+            from e in db.Entries
+            where e.EntryId == entryid
+            select e;
+
+                db.Entries.RemoveRange(selectedEntry);
+                db.SaveChanges();
+            }
+        }
+
     }
 }
 

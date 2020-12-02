@@ -9,7 +9,7 @@ namespace TT_Project_Model
     {
         public Race()
         {
-            RiderAccounts = new HashSet<RiderAccount>();
+            Entries = new HashSet<Entry>();
         }
 
         public int RaceId { get; set; }
@@ -17,6 +17,6 @@ namespace TT_Project_Model
         public short NumberOfLaps { get; set; }
         public short NumberOfPitStops { get; set; }
 
-        public virtual ICollection<RiderAccount> RiderAccounts { get; set; }
+        public virtual ICollection<Entry> Entries { get; set; }
     }
 }
