@@ -27,7 +27,7 @@ The entries need to be checked to meet the criteria by race management, from whi
 
 ## Sprint Breakdowns
 
-![First_ProjectBoard](https://user-images.githubusercontent.com/72052373/100859086-b90f9400-3486-11eb-8693-d2ac33a6523c.JPG)
+![First_ProjectBoard.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/First_ProjectBoard.JPG)
 
 #### Sprint 1 - Tuesday 1st December 2020
 
@@ -37,9 +37,9 @@ By the end of this sprint I aim to have a database set up and interacting with t
 
 * [ ] Complete project board
 * [ ] Update epics and user stories
-* [ ] Complete user story 0.1
-* [ ] complete user story 0.2
-* [ ] Complete user story 0.3
+* [ ] Complete user story 0.1 - Create database
+* [ ] complete user story 0.2 - Create business layer
+* [ ] Complete user story 0.3 - CRUD tests
 * [ ] Complete Agile documentation
 * [ ] Complete Agile review
 * [ ] Complete Agile retrospective
@@ -60,7 +60,7 @@ Changes were pushed to GitHub, but the commits could be improved to have smaller
 * Start: I can start committing work more often.
 * Due to the data tests in the morning, sprint 1 was shorter than other days so I can add more user stories to my sprint backlog for tomorrow.
 
-![Sprint2_Start](https://user-images.githubusercontent.com/72052373/100859174-d8a6bc80-3486-11eb-9371-f8740a78b314.JPG)
+![Sprint2_Start.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/Sprint2_Start.JPG)
 
 #### Sprint 2 - Wednesday 2nd December 2020
 
@@ -70,11 +70,11 @@ The only potential blocker for today is computer limitations, as it is still the
 
 ##### Sprint Goals
 
-* [ ] Complete user story 0.4
-* [ ] Complete user story 1.1
-* [ ] Complete user story 2.1
-* [ ] Complete user story 3.1
-* [ ] Complete user story 3.3
+* [ ] Complete user story 0.4 - Create WPF
+* [ ] Complete user story 1.1 - Create rider account
+* [ ] Complete user story 2.1 - Rider password protect
+* [ ] Complete user story 3.1 - Rider race list
+* [ ] Complete user story 3.3 - Rider entry submit option
 * [ ] Update README
 * [ ] Complete Agile review
 * [ ] Complete Agile retrospective
@@ -84,7 +84,7 @@ The only potential blocker for today is computer limitations, as it is still the
 
 Despite starting the day on track, it became clear that I needed to change some links within my database such as foreign keys. This meant I had to spend more time than planned in the morning on correcting it. When advancing from this I created more methods and tests, which once again took more time than planned.
 
-The WPF was then started and the structure of the application was laid out as planned. From this I started on the backcode of the programme and connected the business layer and the GUI.
+The WPF was then started and the structure of the application was laid out as planned. From this I started on the code behind of the programme and connected the business layer and the GUI.
 
 ##### Sprint Retrospective
 
@@ -92,4 +92,30 @@ The WPF was then started and the structure of the application was laid out as pl
 * Start: Researching problems as I am completing them instead of stopping my work to research the problem
 * Start: I learnt today to add extra time to the plan so if there are problems there is allocated time for it and if not used, this time can be spent on finer details on the planned stages.
 * Continue: Pacing of work completed, I got as far as I wanted to on the WPF but not the other sections due to them being pushed back by the database update.
+
+![Sprint3_Start.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/Sprint3_Start.JPG)
+
+#### Sprint 3 - Thursday 3rd December 2020
+
+By the end of the sprint I want to have achieved the navigation windows within the GUI. As well as this, I want to build the code behind for the rider account and the details for their submitted entries with options to add more entries.
+
+##### Sprint Goals
+
+* [ ] Complete user story 3.1 - Rider race option list
+* [ ] Complete user story 3.3 - Rider entry submit option
+* [ ] Complete user story 1.2 - Rider password protected login
+* [ ] Complete user story 4.1 - Rider view list of entries
+* [ ] Complete user story 4.4 -  Rider entry delete option
+* [ ] Update README
+* [ ] Complete Agile review
+* [ ] Complete Agile retrospective
+* [ ] Commit all changes
+
+##### Sprint Review
+
+I set out to complete the same amount of tasks as I set yesterday with the hope that I wouldn't have unplanned interruptions. The three tasks that I didn't complete yesterday I added again with two more tasks also added.
+
+##### Sprint Retrospective
+
+
 
