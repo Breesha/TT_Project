@@ -35,9 +35,15 @@ namespace TT_Project_WPF
             {
                 LabRegComment.Content = "Rider email already registered";
             }
+            else if(TextRegPass.Text.Length<5 )
+            {
+                LabRegComment.Content = "Password too short";
+            }
             else
             {
                 _crudManager.CreateRiderAccount(TextRegEmail.Text, TextRegPass.Text, TextRegFNam.Text, TextRegLNam.Text, TextRegDofB.Text, TextRegNat.Text, TextRegExp.Text);
+                var selected = _crudManager.RetrieveAllEmails().Contains(TextRegEmail.Text);
+                _crudManager.SetSelectedRider(selected);
                 LabRegComment.Content = "";
                 TextRegEmail.Text = "";
                 TextRegPass.Text = "";
@@ -55,8 +61,32 @@ namespace TT_Project_WPF
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            Project_Users projectuserpage = new Project_Users();
-            this.NavigationService.Navigate(projectuserpage);
+            if (TextLogEmail.Text == "" || PassLogPass.Password == "")
+            {
+                LabLogComment.Content = "Every box needs data";
+            }
+            else
+            {
+                if (_crudManager.RetrieveAllEmailsPasswords().ContainsKey(TextLogEmail.Text))
+                {
+                    if (_crudManager.RetrieveAllEmailsPasswords().ContainsValue(PassLogPass.Password))
+                    {
+                        var selected = _crudManager.RetrieveAllEmails().Contains(TextLogEmail.Text);
+                        _crudManager.SetSelectedRider(selected);
+                        Project_Users projectuserpage = new Project_Users();
+                        this.NavigationService.Navigate(projectuserpage);
+                    }
+                    else
+                    {
+                        LabLogComment.Content = "Wrong password";
+                    }
+                }
+                else
+                {
+                    LabLogComment.Content = "Wrong email";
+                }
+            }
+            
         }
     }
 }

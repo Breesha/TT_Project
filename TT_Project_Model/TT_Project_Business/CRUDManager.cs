@@ -39,6 +39,20 @@ namespace TT_Project_Business
             }
         }
 
+        public Dictionary<string, string> RetrieveAllEmailsPasswords()
+        {
+            using (var db = new TT_ProjectContext())
+            {
+                Dictionary<string, string> emailPass = new Dictionary<string, string>();
+                foreach (var item in db.RiderAccounts)
+                {
+                    emailPass.Add(item.Email, item.Passwrd);
+                }
+                return emailPass;
+
+            }
+        }
+
         public List<Entry> RetrieveAllEntry()
         {
             using (var db = new TT_ProjectContext())
