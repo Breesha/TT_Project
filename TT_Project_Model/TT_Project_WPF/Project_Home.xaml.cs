@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TT_Project_Business;
+using TT_Project_Model;
 
 namespace TT_Project_WPF
 {
@@ -42,8 +43,9 @@ namespace TT_Project_WPF
             else
             {
                 _crudManager.CreateRiderAccount(TextRegEmail.Text, TextRegPass.Text, TextRegFNam.Text, TextRegLNam.Text, TextRegDofB.Text, TextRegNat.Text, TextRegExp.Text);
-                var selected = _crudManager.RetrieveAllEmails().Contains(TextRegEmail.Text);
-                _crudManager.SetSelectedRider(selected);
+                //object selected = _crudManager.CreateRiderAccount(TextRegEmail.Text, TextRegPass.Text, TextRegFNam.Text, TextRegLNam.Text, TextRegDofB.Text, TextRegNat.Text, TextRegExp.Text);
+                //_crudManager.RetrieveAllEmails().Contains(TextRegEmail.Text);
+                //_crudManager.RetrieveAllRider();
                 LabRegComment.Content = "";
                 TextRegEmail.Text = "";
                 TextRegPass.Text = "";
@@ -71,8 +73,8 @@ namespace TT_Project_WPF
                 {
                     if (_crudManager.RetrieveAllEmailsPasswords().ContainsValue(PassLogPass.Password))
                     {
-                        var selected = _crudManager.RetrieveAllEmails().Contains(TextLogEmail.Text);
-                        _crudManager.SetSelectedRider(selected);
+                        //var selected = _crudManager.RetrieveAllEmails().Contains(TextLogEmail.Text);
+                        //_crudManager.SetSelectedRider(selected);
                         Project_Users projectuserpage = new Project_Users();
                         this.NavigationService.Navigate(projectuserpage);
                     }

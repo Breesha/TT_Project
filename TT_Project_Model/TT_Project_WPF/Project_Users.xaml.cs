@@ -43,5 +43,41 @@ namespace TT_Project_WPF
                 LabelAddBRId.Content = _crudManager.SelectedRider.RiderId;
             }
         }
+
+        private void ListBikeEntries_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBikeEntries.ItemsSource = _crudManager.RetrieveAllBikes();
+        }
+
+        private void ListViewEntries_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            ListViewEntries.ItemsSource = _crudManager.RetrieveAllEntry();
+        }
+
+        private void ButtEntryAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if(RadioSport.IsEnabled)
+            {
+                int raceid = 1;
+            }
+            else if(RadioStock.IsEnabled)
+            {
+                int raceid = 2;
+            }
+            else if (RadioLight.IsEnabled)
+            {
+                int raceid = 3;
+            }
+            else if (RadioZero.IsEnabled)
+            {
+                int raceid = 4;
+            }
+            else if(RadioSenior.IsEnabled)
+            {
+                int raceid = 5;
+            }
+            _crudManager.CreateRaceEntry(LabelAddId.Content, raceid);
+        }
     }
 }

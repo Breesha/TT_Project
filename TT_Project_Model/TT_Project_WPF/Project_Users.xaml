@@ -35,8 +35,7 @@
             <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Rider Profile" Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" Style="{StaticResource headerTextStyle}"/>
-        <ListBox x:Name="ListViewRiders" Background="Beige" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        <TextBlock Text="Rider Profile" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource headerTextStyle}"/>
 
         <TextBlock Text="Details" Grid.Column="0" Grid.Row="2" Style="{StaticResource headerTextStyle}"/>
         <TextBlock Text="RiderID" Grid.Column="0" Grid.Row="3"/>
@@ -56,9 +55,15 @@
         <TextBlock Text="RiderID" Grid.Column="4" Grid.Row="1"/>
         <Label x:Name="LabelAddId" Content="" Grid.Column="5" Grid.Row="1"/>
         <TextBlock Text="RaceID" Grid.Column="4" Grid.Row="2"/>
-        <TextBox x:Name="TextAddRace" Text="" Grid.Column="5" Grid.Row="2"/>
+        <RadioButton x:Name="RadioSport" Content="Supersport" Grid.Column="5" Grid.Row="2" VerticalAlignment="Top"/>
+        <RadioButton x:Name="RadioStock" Content="Superstock" Grid.Column="5" Grid.Row="2" VerticalAlignment="Center"/>
+        <RadioButton x:Name="RadioLight" Content="Lightweight" Grid.Column="5" Grid.Row="2" VerticalAlignment="Bottom"/>
+        <RadioButton x:Name="RadioZero" Content="TT Zero" Grid.Column="5" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <RadioButton x:Name="RadioSenior" Content="SENIOR" Grid.Column="5" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="ButtEntryAdd" Content="Submit"  Grid.Column="5" Grid.Row="0" Width="60" Margin="70,0,70,0" Height="49" VerticalAlignment="Top" Click="ButtEntryAdd_Click"/>
+
         <TextBlock Text="View Entries" Grid.Column="4" Grid.Row="3" Style="{StaticResource headerTextStyle}"/>
-        <ListBox x:Name="ListViewEntries" Background="Beige" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="ListViewEntries" Background="Beige" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" SelectionChanged="ListViewEntries_SelectionChanged"/>
         <TextBlock Text="Add Bike" Grid.Column="4" Grid.Row="5" Style="{StaticResource headerTextStyle}"/>
         <TextBlock Text="RiderID" Grid.Column="4" Grid.Row="6"/>
         <Label x:Name="LabelAddBRId" Content="" Grid.Column="5" Grid.Row="6"/>
@@ -67,7 +72,10 @@
         <TextBlock Text="Bike Sponsor" Grid.Column="4" Grid.Row="8"/>
         <TextBox x:Name="TextBSpon" Text="Label" Grid.Column="5" Grid.Row="8"/>
         <TextBlock Text="View Bikes Entered" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="9" Style="{StaticResource headerTextStyle}"/>
-        <ListBox x:Name="ListBikeEntries" Background="Beige" Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="ListBikeEntries" Background="Beige" Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="2" SelectionChanged="ListBikeEntries_SelectionChanged"/>
+        <Button x:Name="ButtBikeAdd" Content="Submit"  Grid.Column="5" Grid.Row="5" Width="60"/>
+        
+
 
     </Grid>
 </Page>
