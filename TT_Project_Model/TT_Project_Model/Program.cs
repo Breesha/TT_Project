@@ -123,6 +123,13 @@ namespace TT_Project_Model
                 //};
                 //db.RiderAccounts.Add(newRider3);
                 //db.SaveChanges();
+
+                //var deleteRider =
+                //from ra in db.RiderAccounts
+                //where ra.RiderId == 21
+                //select ra;
+                //db.RiderAccounts.RemoveRange(deleteRider);
+                //db.SaveChanges();
             }
         }
     }

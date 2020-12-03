@@ -8,7 +8,7 @@
       d:DesignHeight="560" d:DesignWidth="600"
       Title="Project - Home">
 
-    <Grid>
+    <Grid Margin="10,10,10,10">
         <Grid.Background>
             <SolidColorBrush Color="White"/>
         </Grid.Background>
@@ -31,12 +31,30 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label x:Name="RiderLogin" Content="Rider Login" Grid.Column="0" Grid.Row="2"/>
-        <Label x:Name="RiderRegister" Content="RiderRegi" Grid.Column="2" Grid.Row="2"/>
-        <Label x:Name="Rideremail" Content="Rider Email" Grid.Column="0" Grid.Row="4"/>
-        <Label x:Name="RiderPassw" Content="Rider Password" Grid.Column="0" Grid.Row="5"/>
-        <Label x:Name="LabNewRideremail" Content="Rider Email" Grid.Column="2" Grid.Row="4"/>
-        <Label x:Name="LabNewRiderPassw" Content="Rider Password" Grid.Column="2" Grid.Row="5"/>
+        <Label x:Name="RiderLogin" Content="Rider Login" Grid.Column="0" Grid.Row="1"/>
+        <Label x:Name="RiderRegister" Content="Rider Register" Grid.Column="2" Grid.Row="1"/>
+        <Label x:Name="Rideremail" Content="Email" Grid.Column="0" Grid.Row="2"/>
+        <Label x:Name="RiderPassw" Content="Password" Grid.Column="0" Grid.Row="3"/>
+        <TextBox x:Name="TextLogEmail" Text="" Grid.Column="1" Grid.Row="2"/>
+        <TextBox x:Name="TextLogPass" Text="" Grid.Column="1" Grid.Row="3"/>
+        <Button x:Name="ButtonLogin" Content="Login" Grid.Column="1" Grid.Row="4" Height="51" Grid.RowSpan="2" VerticalAlignment="Top" Click="ButtonLogin_Click"/>
+
+        <Label x:Name="LabNewemail" Content="Email" Grid.Column="2" Grid.Row="2"/>
+        <TextBox x:Name="TextRegEmail" Text="" Grid.Column="4" Grid.Row="2"/>
+        <Label x:Name="LabNewPassw" Content="Password" Grid.Column="2" Grid.Row="3"/>
+        <TextBox x:Name="TextRegPass" Text="" Grid.Column="4" Grid.Row="3"/>
+        <Label x:Name="LabNewFName" Content="First Name" Grid.Column="2" Grid.Row="4"/>
+        <TextBox x:Name="TextRegFNam" Text="" Grid.Column="4" Grid.Row="4"/>
+        <Label x:Name="LabNewLName" Content="Last Name" Grid.Column="2" Grid.Row="5"/>
+        <TextBox x:Name="TextRegLNam" Text="" Grid.Column="4" Grid.Row="5"/>
+        <Label x:Name="LabNewDofB" Content="Date of Birth" Grid.Column="2" Grid.Row="6"/>
+        <TextBox x:Name="TextRegDofB" Text="" Grid.Column="4" Grid.Row="6"/>
+        <Label x:Name="LabNewNation" Content="Nationality" Grid.Column="2" Grid.Row="7"/>
+        <TextBox x:Name="TextRegNat" Text="" Grid.Column="4" Grid.Row="7"/>
+        <Label x:Name="LabNewExp" Content="Experience" Grid.Column="2" Grid.Row="8"/>
+        <TextBox x:Name="TextRegExp" Text="" Grid.Column="4" Grid.Row="8"/>
+        <Button x:Name="ButtonReg" Content="Register" Grid.Column="3" Grid.Row="9" Click="ButtonReg_Click"/>
+        <Label x:Name="LabRegComment" Content="" Grid.Column="2" Grid.Row="10" Grid.ColumnSpan="2"/>
 
 
 

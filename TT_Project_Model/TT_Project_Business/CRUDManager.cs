@@ -25,11 +25,17 @@ namespace TT_Project_Business
 
         public StaffAccount SelectedStaff { get; set; }
 
-        public List<StaffAccount> RetrieveAllStaff()
+        public List<string> RetrieveAllEmails()
         {
             using (var db = new TT_ProjectContext())
             {
-                return db.StaffAccounts.ToList();
+                List<string> emailList = new List<string>();
+                foreach (var item in db.RiderAccounts)
+                {
+                    emailList.Add(item.Email);
+                }
+                return emailList;
+                
             }
         }
 
