@@ -10,6 +10,11 @@ namespace TT_Project_Business
     {
         public RiderAccount SelectedRider { get; set; }
 
+        public void SetSelectedRider(object selectedItem)
+        {
+            SelectedRider = (RiderAccount)selectedItem;
+        }
+
         public List<RiderAccount> RetrieveAllRider()
         {
             using (var db = new TT_ProjectContext())

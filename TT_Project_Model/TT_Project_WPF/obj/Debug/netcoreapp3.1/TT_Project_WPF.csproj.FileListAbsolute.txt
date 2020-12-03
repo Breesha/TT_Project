@@ -62,3 +62,7 @@ C:\TT_Project\TT_Project_Model\TT_Project_WPF\bin\Debug\netcoreapp3.1\TT_Project
 C:\TT_Project\TT_Project_Model\TT_Project_WPF\bin\Debug\netcoreapp3.1\TT_Project_Model.pdb
 C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\TT_Project_WPF.csproj.CopyComplete
 C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\App.baml
+C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\Project_Home.g.cs
+C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\Project_Users.g.cs
+C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\Project_Home.baml
+C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\Project_Users.baml

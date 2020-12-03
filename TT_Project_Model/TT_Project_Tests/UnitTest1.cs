@@ -205,7 +205,7 @@ namespace TT_Project_Tests
                 //db.SaveChanges();
 
                 var numberBefore = db.Entries.ToList().Count();
-                _crudManager.DeleteEntry(17);
+                _crudManager.DeleteEntry(15);
                 var numberAfter = db.Entries.ToList().Count();
 
                 Assert.AreEqual(numberBefore, numberAfter + 1);

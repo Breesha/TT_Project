@@ -1,0 +1,44 @@
+﻿<Page x:Class="TT_Project_WPF.Project_Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TT_Project_WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="560" d:DesignWidth="600"
+      Title="Project - Home">
+
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="White"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label x:Name="RiderLogin" Content="Rider Login" Grid.Column="0" Grid.Row="2"/>
+        <Label x:Name="RiderRegister" Content="RiderRegi" Grid.Column="2" Grid.Row="2"/>
+        <Label x:Name="Rideremail" Content="Rider Email" Grid.Column="0" Grid.Row="4"/>
+        <Label x:Name="RiderPassw" Content="Rider Password" Grid.Column="0" Grid.Row="5"/>
+        <Label x:Name="LabNewRideremail" Content="Rider Email" Grid.Column="2" Grid.Row="4"/>
+        <Label x:Name="LabNewRiderPassw" Content="Rider Password" Grid.Column="2" Grid.Row="5"/>
+
+
+
+    </Grid>
+</Page>
