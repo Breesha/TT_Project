@@ -29,11 +29,11 @@ The entries need to be checked to meet the criteria by race management, from whi
 
 ![First_ProjectBoard.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/First_ProjectBoard.JPG)
 
-#### Sprint 1 - Tuesday 1st December 2020
+### Sprint 1 - Tuesday 1st December 2020
 
 By the end of this sprint I aim to have a database set up and interacting with the business  layer. The business layer should have methods to perform basic CRUD operations and from this have unit tests to check these methods.
 
-##### Sprint Goals
+#### Sprint Goals
 
 * [ ] Complete project board
 * [ ] Update epics and user stories
@@ -46,13 +46,13 @@ By the end of this sprint I aim to have a database set up and interacting with t
 * [ ] Update README file
 * [ ] Commit all changes to GitHub
 
-##### Sprint Review
+#### Sprint Review
 
 The project admin was completed early in the day which left lots of time for the rest of the tasks. The database was completed with several modifications throughout the day to link the tables effectively. The interface between database and code was created as well as a business layer and tests were started however, only some were fully coded and run.
 
 Changes were pushed to GitHub, but the commits could be improved to have smaller changes more often to make the description clearer. The commits could also link to the user stories that were completed.
 
-##### Sprint Retrospective
+#### Sprint Retrospective
 
 * Continue: Pace, I didn't overload myself on work so I am not behind on tasks.
 * Continue: I should continue with the pace of work and work load for now.
@@ -62,13 +62,13 @@ Changes were pushed to GitHub, but the commits could be improved to have smaller
 
 ![Sprint2_Start.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/Sprint2_Start.JPG)
 
-#### Sprint 2 - Wednesday 2nd December 2020
+###  Sprint 2 - Wednesday 2nd December 2020
 
 The main focus of this sprint is to create the WPF layer and add functionality to the GUI layer. This involves adding some more methods to the business layer to provide full functionality of the application. The rider profile and entry form is the main goal for the GUI today.
 
 The only potential blocker for today is computer limitations, as it is still the early stages of creation.
 
-##### Sprint Goals
+#### Sprint Goals
 
 * [ ] Complete user story 0.4 - Create WPF
 * [ ] Complete user story 1.1 - Create rider account
@@ -80,13 +80,13 @@ The only potential blocker for today is computer limitations, as it is still the
 * [ ] Complete Agile retrospective
 * [ ] Commit all changes
 
-##### Sprint Review
+#### Sprint Review
 
 Despite starting the day on track, it became clear that I needed to change some links within my database such as foreign keys. This meant I had to spend more time than planned in the morning on correcting it. When advancing from this I created more methods and tests, which once again took more time than planned.
 
 The WPF was then started and the structure of the application was laid out as planned. From this I started on the code behind of the programme and connected the business layer and the GUI.
 
-##### Sprint Retrospective
+#### Sprint Retrospective
 
 * Stop: I spent too long focusing on the change of data in the database and implementing testing on this.
 * Start: Researching problems as I am completing them instead of stopping my work to research the problem
@@ -95,11 +95,11 @@ The WPF was then started and the structure of the application was laid out as pl
 
 ![Sprint3_Start.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/Sprint3_Start.JPG)
 
-#### Sprint 3 - Thursday 3rd December 2020
+### Sprint 3 - Thursday 3rd December 2020
 
 By the end of the sprint I want to have achieved the navigation windows within the GUI. As well as this, I want to build the code behind for the rider account and the details for their submitted entries with options to add more entries.
 
-##### Sprint Goals
+#### Sprint Goals
 
 * [ ] Complete user story 3.1 - Rider race option list
 * [ ] Complete user story 3.3 - Rider entry submit option
@@ -111,11 +111,11 @@ By the end of the sprint I want to have achieved the navigation windows within t
 * [ ] Complete Agile retrospective
 * [ ] Commit all changes
 
-##### Sprint Review
+#### Sprint Review
 
 I set out to complete the same amount of tasks as I set yesterday with the hope that I wouldn't have unplanned interruptions. The three tasks that I didn't complete yesterday I added again with two more tasks also added.
 
-##### Sprint Retrospective
+#### Sprint Retrospective
 
 
 
