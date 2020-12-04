@@ -22,7 +22,7 @@ namespace TT_Project_WPF
     public partial class Project_Users : Page
     {
         private CRUDManager _crudManager = new CRUDManager();
-        string email;
+        //string email;
         public Project_Users()
         {
             InitializeComponent();
@@ -48,6 +48,7 @@ namespace TT_Project_WPF
         private void PopulateRiderFields(string email)
         {
             _crudManager.setSelectedRider(email);
+            LabelEmail.Content = _crudManager.SelectedRider.Email;
             LabelId.Content = _crudManager.SelectedRider.RiderId;
             TextFName.Text = _crudManager.SelectedRider.FirstName;
             TextLName.Text = _crudManager.SelectedRider.LastName;
@@ -64,60 +65,40 @@ namespace TT_Project_WPF
         private void PopulateListBikeEntries()
         {
 
-            ListBikeEntries.ItemsSource = _crudManager.RetrieveAllBikes();
+            ListBikeEntriesiD.ItemsSource =_crudManager.RetrieveAllBikesDetails();
+
         }
 
         private void PopulateListRaceEntries()
         {
-            ListViewEntries.ItemsSource = _crudManager.RetrieveAllSpecificEntry();
+            ListViewEntries.ItemsSource = _crudManager.RetrieveAllEntryDetails();
         }
 
-        //object sender, SelectionChangedEventArgs e
+        
 
-        private void ListViewEntries_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //SqlCommand cmd = new SqlCommand('select * from Entries where RiderID=1');
-            ListViewEntries.ItemsSource = _crudManager.RetrieveAllSpecificEntry();
-            
-                if (ListViewEntries.SelectedItem != null)
-                {
-                    _crudManager.SetSelectedRider(ListViewEntries.SelectedItem);
-                }
-        }
-
-        private void ListBikeEntries_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //SqlCommand cmd = new SqlCommand('select * from Entries where RiderID=1');
-            ListBikeEntries.ItemsSource = _crudManager.RetrieveAllBikes();
-
-            if (ListBikeEntries.SelectedItem != null)
-            {
-                _crudManager.SetSelectedRider(ListBikeEntries.SelectedItem);
-            }
-        }
 
         private void ButtEntryAdd_Click(object sender, RoutedEventArgs e)
         {
             string stringID = LabelAddId.Content.ToString();
             int ID =int.Parse(stringID);
             int raceid = 0;
-            if(RadioSport.IsEnabled)
+            if((bool)RadioSport.IsChecked)
             {
                 raceid = 1;
             }
-            else if(RadioStock.IsEnabled)
+            else if((bool)RadioStock.IsChecked)
             {
                 raceid = 2;
             }
-            else if (RadioLight.IsEnabled)
+            else if ((bool)RadioLight.IsChecked)
             {
                 raceid = 3;
             }
-            else if (RadioZero.IsEnabled)
+            else if ((bool)RadioZero.IsChecked)
             {
                 raceid = 4;
             }
-            else if(RadioSenior.IsEnabled)
+            else if((bool)RadioSenior.IsChecked)
             {
                 raceid = 5;
             }
@@ -127,12 +108,36 @@ namespace TT_Project_WPF
             RadioLight.IsChecked=false;
             RadioZero.IsChecked = false;
             RadioSenior.IsChecked = false;
+            ListViewEntries.ItemsSource = null;
+            PopulateListRaceEntries();
         }
 
         private void ButtUpd_Click(object sender, RoutedEventArgs e)
         {
             _crudManager.UpdateRider(LabelEmail.Content.ToString(), TextFName.Text, TextLName.Text, TextDofB.Text, TextNation.Text, TextExp.Text);
+            TextFName.Text = "";
+            TextLName.Text = "";
+            TextDofB.Text = "";
+            TextNation.Text = "";
+            TextExp.Text = "";
             PopulateRiderFields(LabelEmail.Content.ToString());
+        }
+
+        private void ButtBikeAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var id = int.Parse(LabelAddBRId.Content.ToString());
+            var make = TextBMake.Text.Trim();
+            var sponsor = TextBSpon.Text.Trim();
+            _crudManager.CreateBike(id, make, sponsor);
+            TextBMake.Text = "";
+            TextBSpon.Text = "";
+            ListBikeEntriesiD.ItemsSource = null;
+            //ListBikeEntriesMake.ItemsSource = null;
+            //ListBikeEntriesSpons.ItemsSource = null;
+            PopulateListBikeEntries();
+            
+
+
         }
     }
 }
