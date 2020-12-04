@@ -66,13 +66,14 @@ namespace TT_Project_WPF
 
         private void PopulateListBikeEntries()
         {
-
-            ListBikeEntriesiD.ItemsSource =_crudManager.RetrieveAllBikesDetails();
+            string email = LabelEmail.Content.ToString();
+            ListBikeEntriesiD.ItemsSource =_crudManager.RetrieveAllBikesDetails().ToString();
 
         }
 
         private void PopulateListRaceEntries()
         {
+            
             ListViewEntries.ItemsSource = _crudManager.RetrieveAllEntryDetails();
         }
 

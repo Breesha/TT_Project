@@ -190,17 +190,24 @@ namespace TT_Project_Business
             }
         }
 
-        public List<string> RetrieveAllBikesDetails()
+        public List<Bike> RetrieveAllBikesDetails()
         {
             using (var db = new TT_ProjectContext())
             {
-                List<string> bikeMakeDet = new List<string>();
-                foreach (var item in db.Bikes)
-                {
-                    var text = $"Make: {item.BikeMake}, Sponsor: {item.BikeSponsor}";
-                    bikeMakeDet.Add(text);
-                }
-                    return bikeMakeDet;
+
+                //List<string> bikeMakeDet = new List<string>();
+                //foreach (var item in db.Bikes)
+                //{
+                //        var text = $"MAKE: {item.BikeMake}, SPONSOR: {item.BikeSponsor}";
+                //        bikeMakeDet.Add(text);
+                //}
+                //return bikeMakeDet;
+
+                return (from b in db.Bikes
+                        join ra in db.RiderAccounts on b.RiderId equals ra.RiderId
+                        where b.RiderId == ra.RiderId
+                        select b).ToList();
+
 
             }
         }

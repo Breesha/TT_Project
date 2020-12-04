@@ -50,7 +50,7 @@
         <TextBlock Text="Nationality" Grid.Column="0" Grid.Row="7"/>
         <TextBox x:Name="TextNation" Text="" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2"/>
         <TextBlock Text="Competition Experience" Grid.Column="0" Grid.Row="8" TextWrapping="Wrap"/>
-        <TextBox x:Name="TextExp" Text="" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBox x:Name="TextExp" Text="" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2" TextWrapping="Wrap"/>
         <Button x:Name="ButtUpd" Content="Update"  Grid.Column="1" Grid.Row="10" Click="ButtUpd_Click" />
 
         <TextBlock Text="Add Entry" Grid.Column="4" Grid.Row="0" Style="{StaticResource headerTextStyle}"/>
