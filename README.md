@@ -113,9 +113,41 @@ By the end of the sprint I want to have achieved the navigation windows within t
 
 #### Sprint Review
 
-I set out to complete the same amount of tasks as I set yesterday with the hope that I wouldn't have unplanned interruptions. The three tasks that I didn't complete yesterday I added again with two more tasks also added.
+I set out to complete the same amount of tasks as I set yesterday with the hope that I wouldn't have unplanned interruptions. The three tasks that I didn't complete yesterday I added again with two more tasks also added. The problem from today was linking the data from the login page to the rider profile as it was just showing blank. This was a blocker as I couldn't fully complete the other user stories as they needed the information that wasn't being presented.
+
+I successfully implemented the navigation windows by the end of the day and created a submit race entry button for the rider.
 
 #### Sprint Retrospective
+
+* Continue: Managing work load depending on timeboxing
+* Continue: Pace of completing tasks.
+* Start: Thinking of task order when completing user stories as one can be a blocker to another
+* Start: Prioritising user stories that block other tasks.
+
+![Sprint3_Start.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/Sprint4_Start.JPG)
+
+### Sprint 4 - Friday 4th December 2020
+
+#### Sprint Goals
+
+During this sprint I want to complete the rider race entry list to update as new entries are added, as well as adding delete buttons for entries and/or bike entries. I also aim to have the list displaying the information not the link page.
+
+* [ ] Complete user story 4.1 - View entry list
+* [ ] Complete user story 4.4 - delete entries
+* [ ] Update README
+* [ ] Complete Agile review
+* [ ] Complete Agile retrospective
+* [ ] Commit all changes
+
+#### Sprint Review
+
+This was a shorter day for task completion as we as a group discussed what we needed to do for the presentation on Monday. Due to this, I didn't allocate too many tasks.
+
+#### Sprint Retrospective
+
+
+
+
 
 
 
