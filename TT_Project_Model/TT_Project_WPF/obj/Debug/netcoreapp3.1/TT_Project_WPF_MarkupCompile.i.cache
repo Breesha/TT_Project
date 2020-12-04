@@ -1,5 +1,5 @@
 ﻿TT_Project_WPF
-
+1.0.0.0
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\TT_Project\TT_Project_Model\TT_Project_WPF\App.xaml
 3-402734083
 
-5-359050157
+7-417729136
 215-68484909
 MainWindow.xaml;Project_Home.xaml;Project_Users.xaml;
 
-False
+True
 

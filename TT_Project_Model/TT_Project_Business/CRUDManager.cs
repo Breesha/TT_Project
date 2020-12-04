@@ -15,6 +15,31 @@ namespace TT_Project_Business
             SelectedRider = (RiderAccount)selectedItem;
         }
 
+        public void setSelectedRider(string email)
+        {
+            using (var db = new TT_ProjectContext())
+            {
+                SelectedRider = db.RiderAccounts.Where(e => e.Email.Trim() == email.Trim()).FirstOrDefault();
+            }
+        }
+
+
+        //public RiderAccount populateRiderFeilds(string email)
+        //{
+        //    using (var db = new TT_ProjectContext())
+        //    {
+        //        var selectedRider = //db.RiderAccounts.Where(t => t.Email == email).FirstOrDefault();
+        //            (from rider in db.RiderAccounts where rider.Email == email select rider);
+        //        RiderAccount selected = new RiderAccount();
+        //        foreach (var item in selectedRider)
+        //        {
+        //            selected=item;
+        //        }
+        //        return selected;
+        //    }
+
+        //}
+
         public List<RiderAccount> RetrieveAllRider()
         {
             using (var db = new TT_ProjectContext())
@@ -53,11 +78,26 @@ namespace TT_Project_Business
             }
         }
 
-        public List<Entry> RetrieveAllEntry()
+        public List<int> RetrieveAllSpecificEntry()
         {
             using (var db = new TT_ProjectContext())
             {
-                return db.Entries.ToList();
+                
+                //List<int> entryList = new List<int>();
+                //foreach (var item in db.RiderAccounts)
+                //{
+                //    if (item.Email == email)
+                //    {
+                //        entryList.Add(item.RiderId);
+                //    }
+                //}
+                List<int> entryList2 = new List<int>();
+                    var linkedEntry = (from e in db.Entries where e.RiderId == SelectedRider.RiderId select e).ToList();
+                foreach (var item in linkedEntry)
+                {
+                    entryList2.Add(int.Parse(item.RaceId));
+                }
+                return entryList2;
             }
         }
 
@@ -116,7 +156,22 @@ namespace TT_Project_Business
             }
         }
 
-      
+        public void UpdateRider(string email, string firstname, string lastname, string dateofbirth, string nationality, string experience)
+        {
+            using (var db = new TT_ProjectContext())
+            {
+                SelectedRider = db.RiderAccounts.Where(c => c.Email == email).FirstOrDefault();
+                SelectedRider.FirstName = firstname;
+                SelectedRider.LastName = lastname;
+                SelectedRider.DateOfBirth = dateofbirth;
+                SelectedRider.Nationality = nationality;
+                SelectedRider.Experience = experience;
+                
+                db.SaveChanges();
+            }
+        }
+
+
 
         public void CreateStaffAccount(string email, string password, string firstname, string lastname)
         {

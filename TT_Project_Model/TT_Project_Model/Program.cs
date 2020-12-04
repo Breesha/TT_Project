@@ -126,7 +126,7 @@ namespace TT_Project_Model
 
                 //var deleteRider =
                 //from ra in db.RiderAccounts
-                //where ra.RiderId == 21
+                //where ra.RiderId == 31
                 //select ra;
                 //db.RiderAccounts.RemoveRange(deleteRider);
                 //db.SaveChanges();

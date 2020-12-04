@@ -36,10 +36,11 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="Rider Profile" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource headerTextStyle}"/>
-
+        <Label x:Name="LabelEmail" Content="" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalContentAlignment="Top"/>
+        
         <TextBlock Text="Details" Grid.Column="0" Grid.Row="2" Style="{StaticResource headerTextStyle}"/>
         <TextBlock Text="RiderID" Grid.Column="0" Grid.Row="3"/>
-        <Label x:Name="LabelId" Content="" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"/>
+        <Label x:Name="LabelId" Content="" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" IsEnabled="false"/>
         <TextBlock Text="First Name" Grid.Column="0" Grid.Row="4"/>
         <TextBox x:Name="TextFName" Text="" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
         <TextBlock Text="Last Name" Grid.Column="0" Grid.Row="5"/>
@@ -50,10 +51,11 @@
         <TextBox x:Name="TextNation" Text="" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2"/>
         <TextBlock Text="Competition Experience" Grid.Column="0" Grid.Row="8" TextWrapping="Wrap"/>
         <TextBox x:Name="TextExp" Text="" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Button x:Name="ButtUpd" Content="Update"  Grid.Column="1" Grid.Row="10" Click="ButtUpd_Click" />
 
         <TextBlock Text="Add Entry" Grid.Column="4" Grid.Row="0" Style="{StaticResource headerTextStyle}"/>
         <TextBlock Text="RiderID" Grid.Column="4" Grid.Row="1"/>
-        <Label x:Name="LabelAddId" Content="" Grid.Column="5" Grid.Row="1"/>
+        <Label x:Name="LabelAddId" Content="" Grid.Column="5" Grid.Row="1" IsEnabled="false"/>
         <TextBlock Text="RaceID" Grid.Column="4" Grid.Row="2"/>
         <RadioButton x:Name="RadioSport" Content="Supersport" Grid.Column="5" Grid.Row="2" VerticalAlignment="Top"/>
         <RadioButton x:Name="RadioStock" Content="Superstock" Grid.Column="5" Grid.Row="2" VerticalAlignment="Center"/>
@@ -66,7 +68,7 @@
         <ListBox x:Name="ListViewEntries" Background="Beige" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" SelectionChanged="ListViewEntries_SelectionChanged"/>
         <TextBlock Text="Add Bike" Grid.Column="4" Grid.Row="5" Style="{StaticResource headerTextStyle}"/>
         <TextBlock Text="RiderID" Grid.Column="4" Grid.Row="6"/>
-        <Label x:Name="LabelAddBRId" Content="" Grid.Column="5" Grid.Row="6"/>
+        <Label x:Name="LabelAddBRId" Content="" Grid.Column="5" Grid.Row="6" IsEnabled="false"/>
         <TextBlock Text="Bike Name" Grid.Column="4" Grid.Row="7"/>
         <TextBox x:Name="TextBMake" Text="Label" Grid.Column="5" Grid.Row="7"/>
         <TextBlock Text="Bike Sponsor" Grid.Column="4" Grid.Row="8"/>

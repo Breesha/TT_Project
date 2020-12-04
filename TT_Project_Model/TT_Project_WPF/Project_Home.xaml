@@ -48,7 +48,7 @@
         <TextBox x:Name="TextRegFNam" Text="" Grid.Column="4" Grid.Row="4"/>
         <Label x:Name="LabNewLName" Content="Last Name" Grid.Column="2" Grid.Row="5"/>
         <TextBox x:Name="TextRegLNam" Text="" Grid.Column="4" Grid.Row="5"/>
-        <Label x:Name="LabNewDofB" Content="Date of Birth" Grid.Column="2" Grid.Row="6"/>
+        <Label x:Name="LabNewDofB" Content="Date of Birth   dd/mm/yyyy" Grid.Column="2" Grid.Row="6"/>
         <TextBox x:Name="TextRegDofB" Text="" Grid.Column="4" Grid.Row="6"/>
         <Label x:Name="LabNewNation" Content="Nationality" Grid.Column="2" Grid.Row="7"/>
         <TextBox x:Name="TextRegNat" Text="" Grid.Column="4" Grid.Row="7"/>
