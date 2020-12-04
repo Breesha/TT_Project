@@ -48,17 +48,19 @@ namespace TT_Project_WPF
         private void PopulateRiderFields(string email)
         {
             _crudManager.setSelectedRider(email);
-            LabelEmail.Content = _crudManager.SelectedRider.Email;
-            LabelId.Content = _crudManager.SelectedRider.RiderId;
-            TextFName.Text = _crudManager.SelectedRider.FirstName;
-            TextLName.Text = _crudManager.SelectedRider.LastName;
-            TextDofB.Text = _crudManager.SelectedRider.DateOfBirth;
-            TextNation.Text = _crudManager.SelectedRider.Nationality;
-            TextExp.Text = _crudManager.SelectedRider.Experience;
+            
+                LabelEmail.Content = _crudManager.SelectedRider.Email;
+                LabelId.Content = _crudManager.SelectedRider.RiderId;
+                TextFName.Text = _crudManager.SelectedRider.FirstName;
+                TextLName.Text = _crudManager.SelectedRider.LastName;
+                TextDofB.Text = _crudManager.SelectedRider.DateOfBirth;
+                TextNation.Text = _crudManager.SelectedRider.Nationality;
+                TextExp.Text = _crudManager.SelectedRider.Experience;
 
-            LabelAddId.Content = _crudManager.SelectedRider.RiderId;
+                LabelAddId.Content = _crudManager.SelectedRider.RiderId;
 
-            LabelAddBRId.Content = _crudManager.SelectedRider.RiderId;
+                LabelAddBRId.Content = _crudManager.SelectedRider.RiderId;
+           
 
         }
 
@@ -115,11 +117,11 @@ namespace TT_Project_WPF
         private void ButtUpd_Click(object sender, RoutedEventArgs e)
         {
             _crudManager.UpdateRider(LabelEmail.Content.ToString(), TextFName.Text, TextLName.Text, TextDofB.Text, TextNation.Text, TextExp.Text);
-            TextFName.Text = "";
-            TextLName.Text = "";
-            TextDofB.Text = "";
-            TextNation.Text = "";
-            TextExp.Text = "";
+            //TextFName.Text = "";
+            //TextLName.Text = "";
+            //TextDofB.Text = "";
+            //TextNation.Text = "";
+            //TextExp.Text = "";
             PopulateRiderFields(LabelEmail.Content.ToString());
         }
 
@@ -136,6 +138,17 @@ namespace TT_Project_WPF
             //ListBikeEntriesSpons.ItemsSource = null;
             PopulateListBikeEntries();
             
+
+
+        }
+
+        private void ButtEntryDel_Click(object sender, RoutedEventArgs e)
+        {
+            //if (ListViewEntries.SelectedItem != null)
+            //{
+                
+            //    _crudManager.DeleteEntry();
+            //}
 
 
         }

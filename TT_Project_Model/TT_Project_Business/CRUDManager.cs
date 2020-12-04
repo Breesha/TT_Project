@@ -157,10 +157,32 @@ namespace TT_Project_Business
         {
             using (var db = new TT_ProjectContext())
             {
+                string message = "";
                 List<string> entryDet = new List<string>();
                 foreach (var item in db.Entries)
                 {
-                    var text = $"{item.RiderId}, {item.EntryId}, {item.RaceId}";
+                    if(item.RaceId==1)
+                    {
+                        message = "Supersport";
+                    }
+                    if (item.RaceId == 2)
+                    {
+                        message = "Superstock";
+                    }
+                    if (item.RaceId == 3)
+                    {
+                        message = "Lightweight";
+                    }
+                    if (item.RaceId == 4)
+                    {
+                        message = "TT Zero";
+                    }
+                    if (item.RaceId == 5)
+                    {
+                        message = "SENIOR - Superbike";
+                    }
+
+                    var text = $"{message}";
                     entryDet.Add(text);
                 }
                 return entryDet;
@@ -175,7 +197,7 @@ namespace TT_Project_Business
                 List<string> bikeMakeDet = new List<string>();
                 foreach (var item in db.Bikes)
                 {
-                    var text = $"{item.RiderId}, {item.BikeId}, {item.BikeMake}, {item.BikeSponsor}";
+                    var text = $"Make: {item.BikeMake}, Sponsor: {item.BikeSponsor}";
                     bikeMakeDet.Add(text);
                 }
                     return bikeMakeDet;
@@ -244,8 +266,8 @@ namespace TT_Project_Business
         {
             using (var db = new TT_ProjectContext())
             {
-                //SelectedRider = db.RiderAccounts.Where(c => c.Email == email).FirstOrDefault();
-                setSelectedRider(email);
+                SelectedRider = db.RiderAccounts.Where(c => c.Email == email).FirstOrDefault();
+                //setSelectedRider(email);
                 SelectedRider.FirstName = firstname;
                 SelectedRider.LastName = lastname;
                 SelectedRider.DateOfBirth = dateofbirth;
