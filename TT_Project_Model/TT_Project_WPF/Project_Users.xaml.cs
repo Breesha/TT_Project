@@ -26,8 +26,7 @@ namespace TT_Project_WPF
         public Project_Users()
         {
             InitializeComponent();
-            PopulateListBikeEntries();
-            PopulateListRaceEntries();
+            
 
         }
 
@@ -36,6 +35,8 @@ namespace TT_Project_WPF
         {
             string receivedEmail = email;
             PopulateRiderFields(receivedEmail);
+            PopulateListRaceEntries(receivedEmail);
+            PopulateListBikeEntries(receivedEmail);
 
         }
 
@@ -53,7 +54,7 @@ namespace TT_Project_WPF
                 LabelId.Content = _crudManager.SelectedRider.RiderId;
                 TextFName.Text = _crudManager.SelectedRider.FirstName;
                 TextLName.Text = _crudManager.SelectedRider.LastName;
-                TextDofB.Text = _crudManager.SelectedRider.DateOfBirth;
+                UpdCalender.SelectedDate = Convert.ToDateTime(_crudManager.SelectedRider.DateOfBirth);
                 TextNation.Text = _crudManager.SelectedRider.Nationality;
                 TextExp.Text = _crudManager.SelectedRider.Experience;
 
@@ -64,17 +65,16 @@ namespace TT_Project_WPF
 
         }
 
-        private void PopulateListBikeEntries()
+        private void PopulateListBikeEntries(string email)
         {
-            string email = LabelEmail.Content.ToString();
-            ListBikeEntriesiD.ItemsSource =_crudManager.RetrieveAllBikesDetails().ToString();
+            ListBikeEntriesiD.ItemsSource =_crudManager.RetrieveAllBikesDetails(email);
 
         }
 
-        private void PopulateListRaceEntries()
+        private void PopulateListRaceEntries(string email)
         {
             
-            ListViewEntries.ItemsSource = _crudManager.RetrieveAllEntryDetails();
+            ListViewEntries.ItemsSource = _crudManager.RetrieveAllEntryDetails(email);
         }
 
         
@@ -112,12 +112,12 @@ namespace TT_Project_WPF
             RadioZero.IsChecked = false;
             RadioSenior.IsChecked = false;
             ListViewEntries.ItemsSource = null;
-            PopulateListRaceEntries();
+            PopulateListRaceEntries(LabelEmail.Content.ToString());
         }
 
         private void ButtUpd_Click(object sender, RoutedEventArgs e)
         {
-            _crudManager.UpdateRider(LabelEmail.Content.ToString(), TextFName.Text, TextLName.Text, TextDofB.Text, TextNation.Text, TextExp.Text);
+            _crudManager.UpdateRider(LabelEmail.Content.ToString(), TextFName.Text, TextLName.Text, UpdCalender.SelectedDate.ToString(), TextNation.Text, TextExp.Text);
             //TextFName.Text = "";
             //TextLName.Text = "";
             //TextDofB.Text = "";
@@ -137,7 +137,7 @@ namespace TT_Project_WPF
             ListBikeEntriesiD.ItemsSource = null;
             //ListBikeEntriesMake.ItemsSource = null;
             //ListBikeEntriesSpons.ItemsSource = null;
-            PopulateListBikeEntries();
+            PopulateListBikeEntries(LabelEmail.Content.ToString());
             
 
 

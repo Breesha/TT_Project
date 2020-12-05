@@ -11,25 +11,25 @@ namespace TT_Project_Model
             string message = "";
             if (RaceId == 1)
             {
-                message = "Supersport"
+                message = "Supersport";
             }
             if (RaceId == 2)
             {
-                message = "Superstock"
+                message = "Superstock";
             }
             if (RaceId == 3)
             {
-                message = "Lightweight"
+                message = "Lightweight";
             }
             if (RaceId == 4)
             {
-                message = "TT Zero"
+                message = "TT Zero";
             }
             if (RaceId == 5)
             {
-                message = "SENIOR - Superbike"
+                message = "SENIOR - Superbike";
             }
-            return $"{RaceId} - {message}";
+            return $"{message} - RaceID {RaceId}";
         }
     }
 }

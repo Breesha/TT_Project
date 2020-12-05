@@ -153,44 +153,49 @@ namespace TT_Project_Business
         //    }
         //}
 
-        public List<string> RetrieveAllEntryDetails()
+        public List<Entry> RetrieveAllEntryDetails(string email)
         {
             using (var db = new TT_ProjectContext())
             {
-                string message = "";
-                List<string> entryDet = new List<string>();
-                foreach (var item in db.Entries)
-                {
-                    if(item.RaceId==1)
-                    {
-                        message = "Supersport";
-                    }
-                    if (item.RaceId == 2)
-                    {
-                        message = "Superstock";
-                    }
-                    if (item.RaceId == 3)
-                    {
-                        message = "Lightweight";
-                    }
-                    if (item.RaceId == 4)
-                    {
-                        message = "TT Zero";
-                    }
-                    if (item.RaceId == 5)
-                    {
-                        message = "SENIOR - Superbike";
-                    }
+                //string message = "";
+                //List<string> entryDet = new List<string>();
+                //foreach (var item in db.Entries)
+                //{
+                //    if(item.RaceId==1)
+                //    {
+                //        message = "Supersport";
+                //    }
+                //    if (item.RaceId == 2)
+                //    {
+                //        message = "Superstock";
+                //    }
+                //    if (item.RaceId == 3)
+                //    {
+                //        message = "Lightweight";
+                //    }
+                //    if (item.RaceId == 4)
+                //    {
+                //        message = "TT Zero";
+                //    }
+                //    if (item.RaceId == 5)
+                //    {
+                //        message = "SENIOR - Superbike";
+                //    }
 
-                    var text = $"{message}";
-                    entryDet.Add(text);
-                }
-                return entryDet;
+                //    var text = $"{message}";
+                //    entryDet.Add(text);
+                //}
+                //return entryDet;
+
+                return (from e in db.Entries
+                        join ra in db.RiderAccounts on e.RiderId equals ra.RiderId
+                        where ra.Email == email
+                        select e).ToList();
 
             }
         }
 
-        public List<Bike> RetrieveAllBikesDetails()
+        public List<Bike> RetrieveAllBikesDetails(string email)
         {
             using (var db = new TT_ProjectContext())
             {
@@ -205,7 +210,7 @@ namespace TT_Project_Business
 
                 return (from b in db.Bikes
                         join ra in db.RiderAccounts on b.RiderId equals ra.RiderId
-                        where b.RiderId == ra.RiderId
+                        where ra.Email == email
                         select b).ToList();
 
 
