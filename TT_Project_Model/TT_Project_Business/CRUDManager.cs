@@ -10,6 +10,7 @@ namespace TT_Project_Business
     {
         public RiderAccount SelectedRider { get; set; }
 
+
         public void SetSelectedRider(object selectedItem)
         {
             SelectedRider = (RiderAccount)selectedItem;
@@ -22,6 +23,23 @@ namespace TT_Project_Business
                 SelectedRider = db.RiderAccounts.Where(e => e.Email.Trim() == email.Trim()).FirstOrDefault();
             }
         }
+
+        public Entry SelectedEntry { get; set; }
+
+        public void SetSelectedEntry(object selectedItem)
+        {
+            SelectedEntry = (Entry)selectedItem;
+            int selentid = SelectedEntry.EntryId;
+        }
+
+        public Bike SelectedBike { get; set; }
+
+        public void SetSelectedBike(object selectedItem)
+        {
+            SelectedBike = (Bike)selectedItem;
+            
+        }
+
 
 
         //public RiderAccount populateRiderFeilds(string email)
@@ -236,7 +254,7 @@ namespace TT_Project_Business
             }
         }
 
-        public void CreateRiderAccount(string email, string password, string firstname, string lastname, string dateofbirth, string nationality, string experience)
+        public void CreateRiderAccount(string email, string password, string firstname, string lastname, DateTime dateofbirth, string nationality, string experience)
         {
             using (var db = new TT_ProjectContext())
             {
@@ -260,8 +278,8 @@ namespace TT_Project_Business
                         Nationality = nationality.Trim(),
                         Experience = experience.Trim()
                     };
-                var dOfB = Convert.ToDateTime(dateofbirth);
-                if (((DateTime.Now-dOfB).TotalDays/365)>=21 && password.Length>5)
+                //var dOfB = Convert.ToDateTime(dateofbirth);
+                if (((DateTime.Now-dateofbirth).TotalDays/365)>=21 && password.Length>5)
                 {
                     db.RiderAccounts.Add(newRiderAccount);
                     db.SaveChanges();
@@ -274,7 +292,7 @@ namespace TT_Project_Business
             }
         }
 
-        public void UpdateRider(string email, string firstname, string lastname, string dateofbirth, string nationality, string experience)
+        public void UpdateRider(string email, string firstname, string lastname, DateTime dateofbirth, string nationality, string experience)
         {
             using (var db = new TT_ProjectContext())
             {

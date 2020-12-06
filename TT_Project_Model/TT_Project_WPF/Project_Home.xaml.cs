@@ -38,11 +38,11 @@ namespace TT_Project_WPF
             }
             else if(TextRegPass.Text.Length<5 )
             {
-                LabRegComment.Content = "Password too short";
+                LabRegComment.Content = "Password too short, needs 5 characters minimum";
             }
             else
             {
-                _crudManager.CreateRiderAccount(TextRegEmail.Text, TextRegPass.Text, TextRegFNam.Text, TextRegLNam.Text, RegCalender.SelectedDate.ToString(), TextRegNat.Text, TextRegExp.Text);
+                _crudManager.CreateRiderAccount(TextRegEmail.Text, TextRegPass.Text, TextRegFNam.Text, TextRegLNam.Text, Convert.ToDateTime(RegCalender.SelectedDate), TextRegNat.Text, TextRegExp.Text);
                 //object selected = _crudManager.CreateRiderAccount(TextRegEmail.Text, TextRegPass.Text, TextRegFNam.Text, TextRegLNam.Text, TextRegDofB.Text, TextRegNat.Text, TextRegExp.Text);
                 //_crudManager.RetrieveAllEmails().Contains(TextRegEmail.Text);
                 //_crudManager.RetrieveAllRider();

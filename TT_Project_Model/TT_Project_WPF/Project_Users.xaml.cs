@@ -117,7 +117,7 @@ namespace TT_Project_WPF
 
         private void ButtUpd_Click(object sender, RoutedEventArgs e)
         {
-            _crudManager.UpdateRider(LabelEmail.Content.ToString(), TextFName.Text, TextLName.Text, UpdCalender.SelectedDate.ToString(), TextNation.Text, TextExp.Text);
+            _crudManager.UpdateRider(LabelEmail.Content.ToString(), TextFName.Text, TextLName.Text, Convert.ToDateTime(UpdCalender.SelectedDate), TextNation.Text, TextExp.Text);
             //TextFName.Text = "";
             //TextLName.Text = "";
             //TextDofB.Text = "";
@@ -142,16 +142,43 @@ namespace TT_Project_WPF
 
 
         }
+        
+
+        private void ListViewEntries_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListViewEntries.SelectedItem != null)
+            {
+                _crudManager.SetSelectedEntry(ListViewEntries.SelectedItem);
+
+            }
+        }
 
         private void ButtEntryDel_Click(object sender, RoutedEventArgs e)
         {
-            //if (ListViewEntries.SelectedItem != null)
-            //{
-                
-            //    _crudManager.DeleteEntry();
-            //}
+            if (ListViewEntries.SelectedItem != null)
+            {
 
+                int id = _crudManager.SelectedEntry.EntryId;
+                _crudManager.DeleteEntry(id);
+                PopulateListRaceEntries(LabelEmail.Content.ToString());
+            }
 
+        }
+
+        private void ListBikeEntriesiD_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListBikeEntriesiD.SelectedItem != null)
+            {
+                _crudManager.SetSelectedBike(ListBikeEntriesiD.SelectedItem);
+
+            }
+        }
+
+        private void ButtBikeDel_Click(object sender, RoutedEventArgs e)
+        {
+            int id = _crudManager.SelectedBike.BikeId;
+            _crudManager.DeleteBike(id);
+            PopulateListBikeEntries(LabelEmail.Content.ToString());
         }
     }
 }

@@ -67,7 +67,7 @@
 
 
         <TextBlock Text="View Entries" Grid.Column="4" Grid.Row="3" Style="{StaticResource headerTextStyle}"/>
-        <ListBox x:Name="ListViewEntries" Background="Beige" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="ListViewEntries" Background="Beige" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" SelectionChanged="ListViewEntries_SelectionChanged"/>
         <TextBlock Text="Add Bike" Grid.Column="4" Grid.Row="5" Style="{StaticResource headerTextStyle}"/>
         <TextBlock Text="RiderID" Grid.Column="4" Grid.Row="6"/>
         <Label x:Name="LabelAddBRId" Content="" Grid.Column="5" Grid.Row="6" IsEnabled="false"/>
@@ -76,8 +76,8 @@
         <TextBlock Text="Sponsor" Grid.Column="4" Grid.Row="8"/>
         <TextBox x:Name="TextBSpon" Text="" Grid.Column="5" Grid.Row="8"/>
         <TextBlock Text="View Bikes Entered" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="9" Style="{StaticResource headerTextStyle}"/>
-        <ListBox x:Name="ListBikeEntriesiD" Background="Beige" Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="2" />
-        <Button x:Name="ButtBikeDel" Content="Delete" Grid.Column="3" Grid.Row="10"/>
+        <ListBox x:Name="ListBikeEntriesiD" Background="Beige" Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="2" SelectionChanged="ListBikeEntriesiD_SelectionChanged" />
+        <Button x:Name="ButtBikeDel" Content="Delete" Grid.Column="3" Grid.Row="10" Click="ButtBikeDel_Click"/>
 
         <Button x:Name="ButtBikeAdd" Content="Submit"  Grid.Column="5" Grid.Row="5" Width="60" Click="ButtBikeAdd_Click"/>
 

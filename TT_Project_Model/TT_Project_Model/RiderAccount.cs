@@ -18,7 +18,7 @@ namespace TT_Project_Model
         public string Passwrd { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string Nationality { get; set; }
         public string Experience { get; set; }
 
