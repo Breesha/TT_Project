@@ -8,7 +8,7 @@ namespace TT_Project_Model
     {
         public override string ToString()
         {
-            return $"MAKE: {BikeMake} - SPONSOR: {BikeSponsor}" ;
+            return $"{BikeMake} - {BikeSponsor}" ;
         }
     }
 }

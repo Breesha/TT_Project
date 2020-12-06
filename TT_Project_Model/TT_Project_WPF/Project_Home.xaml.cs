@@ -87,12 +87,12 @@ namespace TT_Project_WPF
                     }
                     else
                     {
-                        LabLogComment.Content = "Wrong password";
+                        LabLogComment.Content = "Incorrect password";
                     }
                 }
                 else
                 {
-                    LabLogComment.Content = "Wrong email";
+                    LabLogComment.Content = "Incorrect email";
                 }
             }
             

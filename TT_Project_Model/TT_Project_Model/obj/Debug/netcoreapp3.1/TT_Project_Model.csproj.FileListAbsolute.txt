@@ -61,3 +61,4 @@ C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Proje
 C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.dll
 C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.pdb
 C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.genruntimeconfig.cache
+C:\TT_Project\TT_Project_Model\TT_Project_Model\obj\Debug\netcoreapp3.1\TT_Project_Model.csprojAssemblyReference.cache

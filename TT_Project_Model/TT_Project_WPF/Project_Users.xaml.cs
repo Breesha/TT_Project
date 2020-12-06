@@ -82,63 +82,83 @@ namespace TT_Project_WPF
 
         private void ButtEntryAdd_Click(object sender, RoutedEventArgs e)
         {
-            string stringID = LabelAddId.Content.ToString();
-            int ID =int.Parse(stringID);
-            int raceid = 0;
-            if((bool)RadioSport.IsChecked)
+            if ((bool)RadioSport.IsChecked == false && (bool)RadioStock.IsChecked == false && (bool)RadioLight.IsChecked == false && (bool)RadioZero.IsChecked == false && (bool)RadioSenior.IsChecked == false)
             {
-                raceid = 1;
+                PopulateListRaceEntries(LabelEmail.Content.ToString());
             }
-            else if((bool)RadioStock.IsChecked)
+            else
             {
-                raceid = 2;
+                string stringID = LabelAddId.Content.ToString();
+                int ID = int.Parse(stringID);
+                int raceid = 0;
+                if ((bool)RadioSport.IsChecked)
+                {
+                    raceid = 1;
+                }
+                else if ((bool)RadioStock.IsChecked)
+                {
+                    raceid = 2;
+                }
+                else if ((bool)RadioLight.IsChecked)
+                {
+                    raceid = 3;
+                }
+                else if ((bool)RadioZero.IsChecked)
+                {
+                    raceid = 4;
+                }
+                else if ((bool)RadioSenior.IsChecked)
+                {
+                    raceid = 5;
+                }
+                _crudManager.CreateRaceEntry(ID, raceid);
+                RadioSport.IsChecked = false;
+                RadioStock.IsChecked = false;
+                RadioLight.IsChecked = false;
+                RadioZero.IsChecked = false;
+                RadioSenior.IsChecked = false;
+                ListViewEntries.ItemsSource = null;
+                PopulateListRaceEntries(LabelEmail.Content.ToString());
             }
-            else if ((bool)RadioLight.IsChecked)
-            {
-                raceid = 3;
-            }
-            else if ((bool)RadioZero.IsChecked)
-            {
-                raceid = 4;
-            }
-            else if((bool)RadioSenior.IsChecked)
-            {
-                raceid = 5;
-            }
-            _crudManager.CreateRaceEntry(ID, raceid);
-            RadioSport.IsChecked = false;
-            RadioStock.IsChecked = false;
-            RadioLight.IsChecked=false;
-            RadioZero.IsChecked = false;
-            RadioSenior.IsChecked = false;
-            ListViewEntries.ItemsSource = null;
-            PopulateListRaceEntries(LabelEmail.Content.ToString());
         }
 
         private void ButtUpd_Click(object sender, RoutedEventArgs e)
         {
-            _crudManager.UpdateRider(LabelEmail.Content.ToString(), TextFName.Text, TextLName.Text, Convert.ToDateTime(UpdCalender.SelectedDate), TextNation.Text, TextExp.Text);
-            //TextFName.Text = "";
-            //TextLName.Text = "";
-            //TextDofB.Text = "";
-            //TextNation.Text = "";
-            //TextExp.Text = "";
-            PopulateRiderFields(LabelEmail.Content.ToString());
+            if (TextFName.Text == "" || TextLName.Text =="" || TextNation.Text=="" || TextExp.Text=="")
+            {
+                PopulateRiderFields(LabelEmail.Content.ToString());
+            }
+            else
+            {
+                _crudManager.UpdateRider(LabelEmail.Content.ToString(), TextFName.Text, TextLName.Text, Convert.ToDateTime(UpdCalender.SelectedDate), TextNation.Text, TextExp.Text);
+                //TextFName.Text = "";
+                //TextLName.Text = "";
+                //TextDofB.Text = "";
+                //TextNation.Text = "";
+                //TextExp.Text = "";
+                PopulateRiderFields(LabelEmail.Content.ToString());
+            }
         }
 
         private void ButtBikeAdd_Click(object sender, RoutedEventArgs e)
         {
-            var id = int.Parse(LabelAddBRId.Content.ToString());
-            var make = TextBMake.Text.Trim();
-            var sponsor = TextBSpon.Text.Trim();
-            _crudManager.CreateBike(id, make, sponsor);
-            TextBMake.Text = "";
-            TextBSpon.Text = "";
-            ListBikeEntriesiD.ItemsSource = null;
-            //ListBikeEntriesMake.ItemsSource = null;
-            //ListBikeEntriesSpons.ItemsSource = null;
-            PopulateListBikeEntries(LabelEmail.Content.ToString());
-            
+            if (TextBMake.Text == "")
+            {
+                PopulateListBikeEntries(LabelEmail.Content.ToString());
+            }
+            else
+            {
+                var id = int.Parse(LabelAddBRId.Content.ToString());
+                var make = TextBMake.Text.Trim();
+                var sponsor = TextBSpon.Text.Trim();
+                _crudManager.CreateBike(id, make, sponsor);
+                TextBMake.Text = "";
+                TextBSpon.Text = "";
+                ListBikeEntriesiD.ItemsSource = null;
+                //ListBikeEntriesMake.ItemsSource = null;
+                //ListBikeEntriesSpons.ItemsSource = null;
+                PopulateListBikeEntries(LabelEmail.Content.ToString());
+            }
 
 
         }

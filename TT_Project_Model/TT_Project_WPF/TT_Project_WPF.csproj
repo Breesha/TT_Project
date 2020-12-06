@@ -7,8 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="WPF_Logo.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TT_Project_Business\TT_Project_Business.csproj" />
     <ProjectReference Include="..\TT_Project_Model\TT_Project_Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="WPF_Logo.jpg" />
   </ItemGroup>
 
 </Project>

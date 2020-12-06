@@ -6,7 +6,8 @@
     <Application.Resources>
         <Style x:Key="headerTextStyle">
             <Setter Property="Label.VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Label.HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Label.HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="Label.Margin" Value="10,0,0,0"></Setter>
             <Setter Property="Label.FontWeight" Value="Bold"></Setter>
             <Setter Property="Label.FontSize" Value="16"></Setter>
             <Setter Property="Label.Foreground" Value="Black"></Setter>
@@ -19,6 +20,12 @@
             <Setter Property="Label.FontSize" Value="12"></Setter>
             <Setter Property="Label.Foreground" Value="Black"></Setter>
             <Setter Property="Label.Margin" Value="3,3,3,3" ></Setter>
+        </Style>
+
+        <Style x:Key="buttonLayout">
+            <Setter Property="Label.VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Label.HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Label.Width" Value="60"></Setter>
         </Style>
         
     </Application.Resources>
