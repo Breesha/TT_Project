@@ -10,7 +10,11 @@
 
     <Grid Margin="10,10,10,10">
         <Grid.Background>
-            <SolidColorBrush Color="White"/>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="gray" Offset="0"/>
+                <GradientStop Color="LightGray" Offset="0.5"/>
+                <GradientStop Color="white" Offset="1"/>
+                </LinearGradientBrush>
         </Grid.Background>
 
         <Grid.RowDefinitions>
@@ -39,47 +43,47 @@
         <Label x:Name="LabelEmail" Content="" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" IsEnabled="False" VerticalContentAlignment="Top"/>
 
         <TextBlock Text="Details" Grid.Column="0" Grid.Row="2" Style="{StaticResource headerTextStyle}"/>
-        <TextBlock Text="RiderID" Grid.Column="0" Grid.Row="3"/>
-        <Label x:Name="LabelId" Content="" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" IsEnabled="false"/>
-        <TextBlock Text="First Name" Grid.Column="0" Grid.Row="4"/>
-        <TextBox x:Name="TextFName" Text="" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
-        <TextBlock Text="Last Name" Grid.Column="0" Grid.Row="5"/>
-        <TextBox x:Name="TextLName" Text="" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"/>
-        <TextBlock Text="Date of Birth" Grid.Column="0" Grid.Row="6"/>
-        <DatePicker x:Name="UpdCalender" SelectedDateFormat="Short" Grid.Column="1"  Grid.ColumnSpan="2" Grid.Row="6"/>
-        <TextBlock Text="Nationality" Grid.Column="0" Grid.Row="7"/>
-        <TextBox x:Name="TextNation" Text="" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2"/>
-        <TextBlock Text="Competition Experience" Grid.Column="0" Grid.Row="8" TextWrapping="Wrap"/>
-        <TextBox x:Name="TextExp" Text="" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2" TextWrapping="Wrap"/>
-        <Button x:Name="ButtUpd" Content="Update"  Grid.Column="1" Grid.Row="10" Click="ButtUpd_Click" />
+        <TextBlock Text="RiderID" Grid.Column="0" Grid.Row="3" Style="{StaticResource labelText}"/>
+        <Label x:Name="LabelId" Content="" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" IsEnabled="false" Margin="3,3,3,3" Background="white"/>
+        <TextBlock Text="First Name" Grid.Column="0" Grid.Row="4" Style="{StaticResource labelText}"/>
+        <TextBox x:Name="TextFName" Text="" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="3,3,3,3"/>
+        <TextBlock Text="Last Name" Grid.Column="0" Grid.Row="5" Style="{StaticResource labelText}"/>
+        <TextBox x:Name="TextLName" Text="" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Margin="3,3,3,3"/>
+        <TextBlock Text="Date of Birth" Grid.Column="0" Grid.Row="6" TextWrapping="Wrap" Style="{StaticResource labelText}"/>
+        <DatePicker x:Name="UpdCalender" SelectedDateFormat="Short" Grid.Column="1"  Grid.ColumnSpan="2" Grid.Row="6" Margin="3,3,3,3" Background="White"/>
+        <TextBlock Text="Nationality" Grid.Column="0" Grid.Row="7" Style="{StaticResource labelText}"/>
+        <TextBox x:Name="TextNation" Text="" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" Margin="3,3,3,3"/>
+        <TextBlock Text="Experience" Grid.Column="0" Grid.Row="8" TextWrapping="Wrap" Style="{StaticResource labelText}"/>
+        <TextBox x:Name="TextExp" Text="" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="2" TextWrapping="Wrap" Margin="3,3,3,3"/>
+        <Button x:Name="ButtUpd" Content="Update" Margin="3,3,3,3" Grid.Column="1" Grid.Row="10" Click="ButtUpd_Click" />
 
         <TextBlock Text="Add Entry" Grid.Column="4" Grid.Row="0" Style="{StaticResource headerTextStyle}"/>
-        <TextBlock Text="RiderID" Grid.Column="4" Grid.Row="1"/>
-        <Label x:Name="LabelAddId" Content="" Grid.Column="5" Grid.Row="1" IsEnabled="false"/>
-        <TextBlock Text="Race" Grid.Column="4" Grid.Row="2"/>
-        <RadioButton x:Name="RadioSport" Content="Supersport" Grid.Column="5" Grid.Row="2" VerticalAlignment="Top"/>
-        <RadioButton x:Name="RadioStock" Content="Superstock" Grid.Column="5" Grid.Row="2" VerticalAlignment="Center"/>
-        <RadioButton x:Name="RadioLight" Content="Lightweight" Grid.Column="5" Grid.Row="2" VerticalAlignment="Bottom"/>
-        <RadioButton x:Name="RadioZero" Content="TT Zero" Grid.Column="5" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <RadioButton x:Name="RadioSenior" Content="SENIOR" Grid.Column="5" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button x:Name="ButtEntryAdd" Content="Submit"  Grid.Column="5" Grid.Row="0" Width="60" Margin="70,0,70,0" Height="49" VerticalAlignment="Top" Click="ButtEntryAdd_Click"/>
-        <Button x:Name="ButtEntryDel" Content="Delete" Grid.Column="3" Grid.Row="3" Margin="0,49,0,0" Grid.RowSpan="2" Click="ButtEntryDel_Click"/>
+        <TextBlock Text="RiderID" Grid.Column="4" Grid.Row="1" Style="{StaticResource labelText}"/>
+        <Label x:Name="LabelAddId" Content="" Grid.Column="5" Grid.Row="1" IsEnabled="false" Margin="3,3,3,3" Background="White"/>
+        <TextBlock Text="Race" Grid.Column="4" Grid.Row="2" Style="{StaticResource labelText}"/>
+        <RadioButton x:Name="RadioSport" Content="Supersport" Grid.Column="5" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <RadioButton x:Name="RadioStock" Content="Superstock" Grid.Column="5" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <RadioButton x:Name="RadioLight" Content="Lightweight" Grid.Column="5" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <RadioButton x:Name="RadioZero" Content="TT Zero" Grid.Column="5" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="right" Margin="0,0,20,0"/>
+        <RadioButton x:Name="RadioSenior" Content="SENIOR" Grid.Column="5" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="right" Margin="0,0,20,0"/>
+        <Button x:Name="ButtEntryAdd" Content="Submit"  Grid.Column="5" Grid.Row="0" Width="60" Margin="70,3,70,3" Height="49" Click="ButtEntryAdd_Click"/>
+        <Button x:Name="ButtEntryDel" Content="Delete" Grid.Column="3" Grid.Row="4" Width="60" HorizontalAlignment="Right" Margin="2,2,2,2" Click="ButtEntryDel_Click"/>
 
 
         <TextBlock Text="View Entries" Grid.Column="4" Grid.Row="3" Style="{StaticResource headerTextStyle}"/>
         <ListBox x:Name="ListViewEntries" Background="Beige" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" SelectionChanged="ListViewEntries_SelectionChanged"/>
         <TextBlock Text="Add Bike" Grid.Column="4" Grid.Row="5" Style="{StaticResource headerTextStyle}"/>
-        <TextBlock Text="RiderID" Grid.Column="4" Grid.Row="6"/>
-        <Label x:Name="LabelAddBRId" Content="" Grid.Column="5" Grid.Row="6" IsEnabled="false"/>
-        <TextBlock Text="Make" Grid.Column="4" Grid.Row="7"/>
-        <TextBox x:Name="TextBMake" Text="" Grid.Column="5" Grid.Row="7"/>
-        <TextBlock Text="Sponsor" Grid.Column="4" Grid.Row="8"/>
-        <TextBox x:Name="TextBSpon" Text="" Grid.Column="5" Grid.Row="8"/>
+        <TextBlock Text="RiderID" Grid.Column="4" Grid.Row="6" Style="{StaticResource labelText}"/>
+        <Label x:Name="LabelAddBRId" Content="" Grid.Column="5" Grid.Row="6" IsEnabled="false" Margin="3,3,3,3" Background="White"/>
+        <TextBlock Text="Make" Grid.Column="4" Grid.Row="7" Style="{StaticResource labelText}"/>
+        <TextBox x:Name="TextBMake" Text="" Grid.Column="5" Grid.Row="7" Margin="3,3,3,3"/>
+        <TextBlock Text="Sponsor" Grid.Column="4" Grid.Row="8" Style="{StaticResource labelText}"/>
+        <TextBox x:Name="TextBSpon" Text="" Grid.Column="5" Grid.Row="8" Margin="3,3,3,3"/>
         <TextBlock Text="View Bikes Entered" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="9" Style="{StaticResource headerTextStyle}"/>
         <ListBox x:Name="ListBikeEntriesiD" Background="Beige" Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="2" SelectionChanged="ListBikeEntriesiD_SelectionChanged" />
-        <Button x:Name="ButtBikeDel" Content="Delete" Grid.Column="3" Grid.Row="10" Click="ButtBikeDel_Click"/>
+        <Button x:Name="ButtBikeDel" Content="Delete" Grid.Column="3" Grid.Row="10" Width="60" HorizontalAlignment="Right" Margin="2,2,2,2" Click="ButtBikeDel_Click"/>
 
-        <Button x:Name="ButtBikeAdd" Content="Submit"  Grid.Column="5" Grid.Row="5" Width="60" Click="ButtBikeAdd_Click"/>
+        <Button x:Name="ButtBikeAdd" Content="Submit"  Grid.Column="5" Grid.Row="5" Width="60" Margin="70,3,70,3" Height="49" Click="ButtBikeAdd_Click"/>
 
 
 

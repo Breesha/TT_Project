@@ -40,6 +40,10 @@ namespace TT_Project_WPF
             {
                 LabRegComment.Content = "Password too short, needs 5 characters minimum";
             }
+            else if((DateTime.Now- Convert.ToDateTime(RegCalender.SelectedDate)).TotalDays/365<=21)
+            {
+                LabRegComment.Content = "Too young to register, must be 21 and over";
+            }
             else
             {
                 _crudManager.CreateRiderAccount(TextRegEmail.Text, TextRegPass.Text, TextRegFNam.Text, TextRegLNam.Text, Convert.ToDateTime(RegCalender.SelectedDate), TextRegNat.Text, TextRegExp.Text);

@@ -274,7 +274,7 @@ namespace TT_Project_Business
                         Passwrd = password.Trim(),
                         FirstName = firstname.Trim(),
                         LastName = lastname.Trim(),
-                        DateOfBirth = dateofbirth,
+                        DateOfBirth = dateofbirth.ToString(),
                         Nationality = nationality.Trim(),
                         Experience = experience.Trim()
                     };
@@ -300,7 +300,7 @@ namespace TT_Project_Business
                 //setSelectedRider(email);
                 SelectedRider.FirstName = firstname;
                 SelectedRider.LastName = lastname;
-                SelectedRider.DateOfBirth = dateofbirth;
+                SelectedRider.DateOfBirth = dateofbirth.ToShortDateString();
                 SelectedRider.Nationality = nationality;
                 SelectedRider.Experience = experience;
                 

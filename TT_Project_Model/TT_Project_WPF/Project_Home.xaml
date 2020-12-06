@@ -10,8 +10,13 @@
 
     <Grid Margin="10,10,10,10">
         <Grid.Background>
-            <SolidColorBrush Color="White"/>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="gray" Offset="0"/>
+                <GradientStop Color="LightGray" Offset="0.5"/>
+                <GradientStop Color="white" Offset="1"/>
+            </LinearGradientBrush>
         </Grid.Background>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -31,29 +36,30 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label x:Name="RiderLogin" Content="Rider Login" Grid.Column="0" Grid.Row="1"/>
-        <Label x:Name="RiderRegister" Content="Rider Register" Grid.Column="2" Grid.Row="1"/>
-        <Label x:Name="Rideremail" Content="Email" Grid.Column="0" Grid.Row="2"/>
-        <Label x:Name="RiderPassw" Content="Password" Grid.Column="0" Grid.Row="3"/>
+        <Label x:Name="TtTitle" Content="TT Racing Account" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource headerTextStyle}"/>
+        <Label x:Name="RiderLogin" Content="Rider Login" Grid.Column="0" Grid.Row="1"  Style="{StaticResource headerTextStyle}"/>
+        <Label x:Name="RiderRegister" Content="Rider Register" Grid.Column="2" Grid.Row="1"  Style="{StaticResource headerTextStyle}"/>
+        <Label x:Name="Rideremail" Content="Email" Grid.Column="0" Grid.Row="2" Style="{StaticResource labelText}"/>
+        <Label x:Name="RiderPassw" Content="Password" Grid.Column="0" Grid.Row="3" Style="{StaticResource labelText}"/>
         <TextBox x:Name="TextLogEmail" Text="" Grid.Column="1" Grid.Row="2"/>
         <PasswordBox x:Name="PassLogPass" Grid.Column="1" Grid.Row="3"/>
         <Button x:Name="ButtonLogin" Content="Login" Grid.Column="1" Grid.Row="4" Height="51" Grid.RowSpan="2" VerticalAlignment="Top" Click="ButtonLogin_Click"/>
         <Label x:Name="LabLogComment" Content="" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"/>
 
-        <Label x:Name="LabNewemail" Content="Email" Grid.Column="2" Grid.Row="2"/>
-        <TextBox x:Name="TextRegEmail" Text="" Grid.Column="4" Grid.Row="2"/>
-        <Label x:Name="LabNewPassw" Content="Password" Grid.Column="2" Grid.Row="3"/>
+        <Label x:Name="LabNewemail" Content="Email" Grid.Column="2" Grid.Row="2" Style="{StaticResource labelText}"/>
+        <TextBox x:Name="TextRegEmail" Text="" Grid.Column="4" Grid.Row="2" />
+        <Label x:Name="LabNewPassw" Content="Password" Grid.Column="2" Grid.Row="3" Style="{StaticResource labelText}"/>
         <TextBox x:Name="TextRegPass" Text="" Grid.Column="4" Grid.Row="3"/>
-        <Label x:Name="LabNewFName" Content="First Name" Grid.Column="2" Grid.Row="4"/>
+        <Label x:Name="LabNewFName" Content="First Name" Grid.Column="2" Grid.Row="4" Style="{StaticResource labelText}"/>
         <TextBox x:Name="TextRegFNam" Text="" Grid.Column="4" Grid.Row="4"/>
-        <Label x:Name="LabNewLName" Content="Last Name" Grid.Column="2" Grid.Row="5"/>
+        <Label x:Name="LabNewLName" Content="Last Name" Grid.Column="2" Grid.Row="5" Style="{StaticResource labelText}"/>
         <TextBox x:Name="TextRegLNam" Text="" Grid.Column="4" Grid.Row="5"/>
-        <Label x:Name="LabNewDofB" Content="Date of Birth" Grid.Column="2" Grid.Row="6"/>
+        <Label x:Name="LabNewDofB" Content="Date of Birth" Grid.Column="2" Grid.Row="6" Style="{StaticResource labelText}"/>
         <DatePicker x:Name="RegCalender" SelectedDateFormat="Short" Grid.Column="4" Grid.Row="6"/>
-        <Label x:Name="LabNewNation" Content="Nationality" Grid.Column="2" Grid.Row="7"/>
+        <Label x:Name="LabNewNation" Content="Nationality" Grid.Column="2" Grid.Row="7" Style="{StaticResource labelText}"/>
         <TextBox x:Name="TextRegNat" Text="" Grid.Column="4" Grid.Row="7"/>
-        <Label x:Name="LabNewExp" Content="Experience" Grid.Column="2" Grid.Row="8"/>
-        <TextBox x:Name="TextRegExp" Text="" Grid.Column="4" Grid.Row="8"/>
+        <Label x:Name="LabNewExp" Content="Experience" Grid.Column="2" Grid.Row="8" Style="{StaticResource labelText}"/>
+        <TextBox x:Name="TextRegExp" Text="" Grid.Column="4" Grid.Row="8" TextWrapping="Wrap"/>
         <Button x:Name="ButtonReg" Content="Register" Grid.Column="3" Grid.Row="9" Click="ButtonReg_Click"/>
         <Label x:Name="LabRegComment" Content="" Grid.Column="2" Grid.Row="10" Grid.ColumnSpan="2"/>
         
