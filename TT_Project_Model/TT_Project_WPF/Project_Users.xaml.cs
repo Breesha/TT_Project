@@ -130,7 +130,7 @@ namespace TT_Project_WPF
             }
             else
             {
-                _crudManager.UpdateRider(LabelEmail.Content.ToString(), TextFName.Text, TextLName.Text, Convert.ToDateTime(UpdCalender.SelectedDate), TextNation.Text, TextExp.Text);
+                _crudManager.UpdateRider(LabelEmail.Content.ToString(), TextFName.Text, TextLName.Text,Convert.ToDateTime(UpdCalender.SelectedDate), TextNation.Text, TextExp.Text);
                 //TextFName.Text = "";
                 //TextLName.Text = "";
                 //TextDofB.Text = "";

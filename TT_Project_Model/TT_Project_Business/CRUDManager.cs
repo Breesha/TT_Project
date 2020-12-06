@@ -274,21 +274,21 @@ namespace TT_Project_Business
                         Passwrd = password.Trim(),
                         FirstName = firstname.Trim(),
                         LastName = lastname.Trim(),
-                        DateOfBirth = dateofbirth.ToString(),
+                        DateOfBirth = dateofbirth.ToShortDateString(),
                         Nationality = nationality.Trim(),
                         Experience = experience.Trim()
                     };
-                //var dOfB = Convert.ToDateTime(dateofbirth);
-                if (((DateTime.Now-dateofbirth).TotalDays/365)>=21 && password.Length>5)
-                {
+                ////var dOfB = Convert.ToDateTime(dateofbirth);
+                //if ( password.Length > 5) //(DateTime.Now.Date - dateofbirth.Date).TotalDays / 365.25) >= 21 &&
+                //{
                     db.RiderAccounts.Add(newRiderAccount);
                     db.SaveChanges();
-                }
-                else
-                {
-                    db.SaveChanges();
-                }
-                
+                //}
+                //else
+                //{
+                //    db.SaveChanges();
+                //}
+
             }
         }
 
