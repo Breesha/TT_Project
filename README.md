@@ -133,6 +133,7 @@ I successfully implemented the navigation windows by the end of the day and crea
 During this sprint I want to complete the rider race entry list to update as new entries are added, as well as adding delete buttons for entries and/or bike entries. I also aim to have the list displaying the information not the link page.
 
 * [ ] Complete user story 4.1 - View entry list
+* [ ] Complete user story 4.5 - View bike list
 * [ ] Complete user story 4.4 - delete entries
 * [ ] Update README
 * [ ] Complete Agile review
@@ -142,6 +143,27 @@ During this sprint I want to complete the rider race entry list to update as new
 #### Sprint Review
 
 This was a shorter day for task completion as we as a group discussed what we needed to do for the presentation on Monday. Due to this, I didn't allocate too many tasks.
+
+From the three tasks that were set, the two top prioritised tasks were completed (creating an entry and bike list that displays the data for the selected rider) and the third task, a delete for the list boxes was started. The tasks for today all linked so this was a blocker as I couldn't move onto the next task until the current one was completed.
+
+#### Sprint Retrospective
+
+* Continue: prioritising user stories 
+* Continue: completing user stories that link in the same sprint, so the coding can be recreated appropriately with the method clear in my mind
+* Continue: keeping the contents of the day outside of the sprint in mind when adding user stories to the sprint backlog to not overload myself
+* Start: Take time at the start of the day to not just think about the blockers of the sprint but also how these can be affecting all user stories. From this a contingence plan can be drafted instead of just being stuck on a task for too long
+
+![]()
+
+### Sprint 5 - Sunday 6th December 2020
+
+#### Sprint Goals
+
+
+
+#### Sprint Review
+
+
 
 #### Sprint Retrospective
 
