@@ -161,15 +161,130 @@ From the three tasks that were set, the two top prioritised tasks were completed
 
 #### Sprint Goals
 
+This was the last full sprint of the project, so the main aim was to clear up the application. This meant to make it more user friendly and clear on the layout of the WPF. On top of this, the application had the final features added to it to allow full CRUD functionality.
 
+* [ ] Complete user story 4.4 - Rider delete race entry
+* [ ] Complete user story 4.6 - Rider delete bike entry
+* [ ] Complete user story 3.2 - Rider race restrictions
+* [ ] Complete user story 4.3 - Rider update details
+* [ ] Complete user story 6.1 - WPF make pretty
+* [ ] Update README
+* [ ] Include class diagram (README)
+* [ ] Include WPF images (README)
+* [ ] Complete Agile review
+* [ ] Complete Agile retrospective
+* [ ] Commit all changes
 
 #### Sprint Review
 
+Overall, this was a very successful sprint as all essential tasks were completed. This meant that  it was fully functioning and met the requirements. Although all tasks weren't completed fully, the two delete buttons and update button became fully functional.
 
+The amount of user stories was small for this sprint as WPF visuals was the main focus. During this there was a problem with making the image on the Sign In page visible but this was achieved and a smooth and flowing layout.
 
 #### Sprint Retrospective
 
+* Start: I should have tested all functions throughout the code changes, checking the change didn't affect further code
+* Start: Having full run-throughs of using all functions to check for exceptions
 
+* Continue: Focusing on the right task, priorities were correct.
+
+
+
+## Project Sprint Review
+
+Database first
+
+Model
+
+Business
+
+-
+
+Business
+
+CRUD
+
+Add data
+
+Testing
+
+-
+
+Rider creation method
+
+Rider update method
+
+Rider race entry method
+
+Rider bike entry method
+
+WPF creation
+
+Linking data
+
+-
+
+Add functionality
+
+Listboxes
+
+Delete
+
+Update
+
+-
+
+Pretty
+
+Practice runs
+
+presentation practice
+
+## Project Sprint Retrospective
+
+didn't overload
+
+got to grips with git early
+
+kanban board needed updating
+
+-
+
+kanban importance
+
+user story clarity
+
+database update was unplanned
+
+-
+
+scope of project too big
+
+cut down
+
+crack on good pace again when got going, timeboxing
+
+-
+
+stuck, blockers were big this day
+
+long hours needed to complete work
+
+couldn't push it all to the next day to complete otherwise too much to do
+
+-
+
+good work
+
+simple and lots of task completed instead of less but larger jobs
+
+-
+
+same again
+
+final touches
+
+good mood as mvp was achieved
 
 
 
