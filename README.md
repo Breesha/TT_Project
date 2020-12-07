@@ -19,11 +19,13 @@ The entries need to be checked to meet the criteria by race management, from whi
 
 ## Class Diagrams
 
-(image)
+![Class_Diagram.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/Class_Diagram.JPG)
 
 ## WPF
 
-(image)
+![WPF_FirstPage.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/WPF_FirstPage.JPG)
+
+![WPF_SecondPage.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/WPF_SecondPage.JPG)
 
 ## Sprint Breakdowns
 
@@ -153,7 +155,7 @@ From the three tasks that were set, the two top prioritised tasks were completed
 * Continue: keeping the contents of the day outside of the sprint in mind when adding user stories to the sprint backlog to not overload myself
 * Start: Take time at the start of the day to not just think about the blockers of the sprint but also how these can be affecting all user stories. From this a contingence plan can be drafted instead of just being stuck on a task for too long
 
-![]()
+![Sprint5_Start.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/Sprint5_Start.JPG)
 
 ### Sprint 5 - Sunday 6th December 2020
 
