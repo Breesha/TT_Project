@@ -168,6 +168,7 @@ This was the last full sprint of the project, so the main aim was to clear up th
 * [ ] Complete user story 3.2 - Rider race restrictions
 * [ ] Complete user story 4.3 - Rider update details
 * [ ] Complete user story 6.1 - WPF make pretty
+* [ ] Record demo for presentation
 * [ ] Update README
 * [ ] Include class diagram (README)
 * [ ] Include WPF images (README)
@@ -188,105 +189,49 @@ The amount of user stories was small for this sprint as WPF visuals was the main
 
 * Continue: Focusing on the right task, priorities were correct.
 
+![Sprint6_Start.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/Sprint6_Start.JPG)
 
+## Sprint 6 - Monday 7th December 2020
+
+### Sprint Goals
+
+This sprint was for final checks and preparation for the group presentation. This meant that there was no user stories to be completed but instead touch up the previous completed user stories to make them achieve more than the acceptance criteria. For example, the layout of the WPF and completing further tests.
+
+* [ ] Complete final tests
+* [ ] Update README
+* [ ] Presentation preparation
+* [ ] Complete Agile Review
+* [ ] Complete Agile Retrospective
+* [ ] Commit all changes
+
+### Sprint Review
+
+I was aware that this sprint was to just make small changes to the project. The presentation preparation as a group and individually took up a large amount of the day so I could achieve what I wanted in the available time. From further manual testing I discovered that the password method I have created lets you log in with any password that has been saved, not necessarily the specific password expected. This will be added to the future features that I wish to implement/ change. 
+
+### Sprint Retrospective
+
+I planned time well to accommodate the other plans during this sprint.
+
+* Continue: planning with external factors involved
+* Start: manual testing of all areas sooner
+
+![Final_ProjectBoard.JPG](https://github.com/Breesha/TT_Project/blob/main/Images/Final_ProjectBoard.JPG)
 
 ## Project Sprint Review
 
-Database first
+The process I followed during this project was to create the database first, fill this with appropriate data and then to implement the business layer to interact with the database. At this point I created the CRUD testing before moving to the WPF creation. The test all pass and check the functionality of the business layer.
 
-Model
+The project specification was to create an application that consists of a WPF front end, SQL database backend with at least 2 linking tables. The specification also included the use of entity framework and a business layer with logic. Therefore, the project MVP was achieved and so the project is considered successful.
 
-Business
+Use of Git and GitHub was very frequent, so versions of the project weren't greatly varied when trying to track back any errors or changes to code. The README was updated multiple times a day so the information inputted was recently completed and clear in the mind. This meant progress was closely monitored and each sprint could be planned in accordance with progress.
 
--
 
-Business
-
-CRUD
-
-Add data
-
-Testing
-
--
-
-Rider creation method
-
-Rider update method
-
-Rider race entry method
-
-Rider bike entry method
-
-WPF creation
-
-Linking data
-
--
-
-Add functionality
-
-Listboxes
-
-Delete
-
-Update
-
--
-
-Pretty
-
-Practice runs
-
-presentation practice
 
 ## Project Sprint Retrospective
 
-didn't overload
+I started the project very positive as I had planned which tables would be needed for the database and how these would link to each other, if this was needed. I started with a small amount of tasks within my sprint 1 and 2 which meant I didn't feel overwhelmed at the start. From the way I planned my user stories and sprints I started each stage of the requirements one at a time to help my computer cope with the demand, my main blocker was the performance of my computer during this project.
 
-got to grips with git early
-
-kanban board needed updating
-
--
-
-kanban importance
-
-user story clarity
-
-database update was unplanned
-
--
-
-scope of project too big
-
-cut down
-
-crack on good pace again when got going, timeboxing
-
--
-
-stuck, blockers were big this day
-
-long hours needed to complete work
-
-couldn't push it all to the next day to complete otherwise too much to do
-
--
-
-good work
-
-simple and lots of task completed instead of less but larger jobs
-
--
-
-same again
-
-final touches
-
-good mood as mvp was achieved
-
-
+Despite some challenges faced when linking the navigation windows and the selected rider, I stayed positive throughout the project and enjoyed completing it. With the help of Agile documentation I stayed on track and achieved the MVP.
 
 
 
