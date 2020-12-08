@@ -37,26 +37,8 @@ namespace TT_Project_Business
         public void SetSelectedBike(object selectedItem)
         {
             SelectedBike = (Bike)selectedItem;
-            
         }
 
-
-
-        //public RiderAccount populateRiderFeilds(string email)
-        //{
-        //    using (var db = new TT_ProjectContext())
-        //    {
-        //        var selectedRider = //db.RiderAccounts.Where(t => t.Email == email).FirstOrDefault();
-        //            (from rider in db.RiderAccounts where rider.Email == email select rider);
-        //        RiderAccount selected = new RiderAccount();
-        //        foreach (var item in selectedRider)
-        //        {
-        //            selected=item;
-        //        }
-        //        return selected;
-        //    }
-
-        //}
 
         public List<RiderAccount> RetrieveAllRider()
         {
@@ -92,124 +74,19 @@ namespace TT_Project_Business
                     emailPass.Add(item.Email, item.Passwrd);
                 }
                 return emailPass;
-
             }
         }
 
-        //public Dictionary<string, string> RetrieveAllSpecificEntry()
-        //{
-        //    using (var db = new TT_ProjectContext())
-        //    {
-
-        //        //List<int> entryList = new List<int>();
-        //        //foreach (var item in db.RiderAccounts)
-        //        //{
-        //        //    if (item.Email == email)
-        //        //    {
-        //        //        entryList.Add(item.RiderId);
-        //        //    }
-        //        //}
-        //        //List<Entry> entryList2 = new List<Entry>();
-        //        //var entries2= db.Entries.Where(e => e.RiderId == SelectedRider.RiderId).FirstOrDefault();
-        //        //return entries2;
-        //        //var linkedEntry = (from e in db.Entries where e.RiderId == SelectedRider.RiderId select e).AsEnumerable();
-        //        //var listEntries = linkedEntry.ToList();
-        //        //return listEntries;
-
-        //        Dictionary<string, string> entryRaceNum = new Dictionary<string, string>();
-
-        //        //foreach (var item in db.Entries)
-        //        //{
-        //        //    //if (item.RiderId == SelectedRider.RiderId)
-        //        //    //{
-        //        //        entryRaceNum.Add(item.RiderId.ToString(),item.RaceId.ToString());
-        //        //    //}
-        //        //}
-        //        return entryRaceNum;
-        //    }
-        //}
-
-        //public List<string> RetrieveAllSpecificBikes()
-        //{
-        //    using (var db = new TT_ProjectContext())
-        //    {
-
-        //        //List<int> entryList = new List<int>();
-        //        //foreach (var item in db.RiderAccounts)
-        //        //{
-        //        //    if (item.Email == email)
-        //        //    {
-        //        //        entryList.Add(item.RiderId);
-        //        //    }
-        //        //}
-        //        //List<int> entryList2 = new List<int>();
-        //        //var linkedEntry = (from b in db.Bikes where b.RiderId == SelectedRider.RiderId select b).AsEnumerable<Bike>();
-        //        //foreach (var item in linkedEntry)
-        //        //{
-        //        //    entryList2.Add(int.Parse(item.BikeId.ToString()));
-        //        //}
-        //        //return entryList2;
-        //        List<string> bikeMakeDet = new List<string>();
-        //        foreach (var item in db.Bikes)
-        //        {
-
-        //                bikeMakeDet.Add(item.RiderId.ToString());
-        //                bikeMakeDet.Add(item.BikeMake);
-        //                bikeMakeDet.Add(item.BikeSponsor);
-        //        }
-        //            //Dictionary<string, string> bikeMakeSpon = new Dictionary<string, string>();
-
-        //            //foreach (var item in db.Bikes)
-        //            //{
-        //            ////if (item.RiderId == SelectedRider.RiderId)
-        //            ////{
-        //            //    bikeMakeSpon.Add(item.BikeMake, item.BikeSponsor);
-        //            ////}
-        //            //}
-        //     return bikeMakeDet;
-
-        //    }
-        //}
+        
 
         public List<Entry> RetrieveAllEntryDetails(string email)
         {
             using (var db = new TT_ProjectContext())
             {
-                //string message = "";
-                //List<string> entryDet = new List<string>();
-                //foreach (var item in db.Entries)
-                //{
-                //    if(item.RaceId==1)
-                //    {
-                //        message = "Supersport";
-                //    }
-                //    if (item.RaceId == 2)
-                //    {
-                //        message = "Superstock";
-                //    }
-                //    if (item.RaceId == 3)
-                //    {
-                //        message = "Lightweight";
-                //    }
-                //    if (item.RaceId == 4)
-                //    {
-                //        message = "TT Zero";
-                //    }
-                //    if (item.RaceId == 5)
-                //    {
-                //        message = "SENIOR - Superbike";
-                //    }
-
-                //    var text = $"{message}";
-                //    entryDet.Add(text);
-                //}
-                //return entryDet;
-
                 return (from e in db.Entries
                         join ra in db.RiderAccounts on e.RiderId equals ra.RiderId
                         where ra.Email == email
                         select e).ToList();
-
             }
         }
 
@@ -217,21 +94,10 @@ namespace TT_Project_Business
         {
             using (var db = new TT_ProjectContext())
             {
-
-                //List<string> bikeMakeDet = new List<string>();
-                //foreach (var item in db.Bikes)
-                //{
-                //        var text = $"MAKE: {item.BikeMake}, SPONSOR: {item.BikeSponsor}";
-                //        bikeMakeDet.Add(text);
-                //}
-                //return bikeMakeDet;
-
                 return (from b in db.Bikes
                         join ra in db.RiderAccounts on b.RiderId equals ra.RiderId
                         where ra.Email == email
                         select b).ToList();
-
-
             }
         }
 
@@ -258,16 +124,6 @@ namespace TT_Project_Business
         {
             using (var db = new TT_ProjectContext())
             {
-                //string message = "";
-
-                //foreach (var item in db.RiderAccounts)
-                //{
-                //    if (item.Email == email)
-                //    {
-                //        message = "Email already used";
-                //    }
-                
-                
                     var newRiderAccount = new RiderAccount
                     {
                         Email = email.Trim(),

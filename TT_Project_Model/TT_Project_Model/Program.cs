@@ -125,11 +125,12 @@ namespace TT_Project_Model
                 //db.SaveChanges();
 
                 //var deleteRider =
-                //from ra in db.Bikes
-                //where ra.BikeId == 17 || ra.BikeId == 21 || ra.BikeId == 31 || ra.BikeId == 29 || ra.BikeId == 32 || ra.BikeId == 33
+                //from ra in db.RiderAccounts
+                //where ra.Email == "Robert" //|| ra.Email == "steve" //|| ra.RiderId == 38
                 //select ra;
-                //db.Bikes.RemoveRange(deleteRider);
+                //db.RiderAccounts.RemoveRange(deleteRider);
                 //db.SaveChanges();
+
             }
         }
     }
