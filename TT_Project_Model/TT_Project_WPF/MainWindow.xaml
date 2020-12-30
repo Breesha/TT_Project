@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TT_Project_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="560" Width="600" Source="Project_Home.xaml">
+        Title="MainWindow" Height="560" Width="600" Source="Staff_Rider_Selection.xaml">
 </NavigationWindow>
 
 

@@ -13,6 +13,15 @@
     <Compile Update="Project_Users.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Staff_Home.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Staff_Rider_Selection.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Staff_Users.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -22,6 +31,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Project_Users.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Staff_Home.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Staff_Rider_Selection.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Staff_Users.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

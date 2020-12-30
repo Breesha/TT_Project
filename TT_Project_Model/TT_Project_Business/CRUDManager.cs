@@ -48,7 +48,6 @@ namespace TT_Project_Business
             }
         }
 
-        public StaffAccount SelectedStaff { get; set; }
 
         public List<string> RetrieveAllEmails()
         {
@@ -166,23 +165,6 @@ namespace TT_Project_Business
 
 
 
-        public void CreateStaffAccount(string email, string password, string firstname, string lastname)
-        {
-            using (var db = new TT_ProjectContext())
-            {
-                var newStaffAccount = new StaffAccount
-                {
-                    Email = email.Trim(),
-                    Passwrd = password.Trim(),
-                    FirstName = firstname.Trim(),
-                    LastName = lastname.Trim()
-                };
-
-                db.StaffAccounts.Add(newStaffAccount);
-                db.SaveChanges();
-            }
-        }
-
         public void CreateBike(int riderid, string make, string sponsor)
         {
             using (var db = new TT_ProjectContext())
@@ -259,6 +241,121 @@ namespace TT_Project_Business
             }
         }
 
+
+
+        //RIDER INFORMATION ABOVE
+        //STAFF INFORMATION BELOW
+
+
+
+        public StaffAccount SelectedStaff { get; set; }
+
+        public void SetSelectedStaff(object selectedItem)
+        {
+            SelectedStaff = (StaffAccount)selectedItem;
+        }
+
+        public void setSelectedStaff(string email)
+        {
+            using (var db = new TT_ProjectContext())
+            {
+                SelectedStaff = db.StaffAccounts.Where(e => e.Email.Trim() == email.Trim()).FirstOrDefault();
+            }
+        }
+
+        public List<StaffAccount> RetrieveAllStaff()
+        {
+            using (var db = new TT_ProjectContext())
+            {
+                return db.StaffAccounts.ToList();
+            }
+        }
+
+        public void CreateStaffAccount(string email, string password, string firstname, string lastname)
+        {
+            using (var db = new TT_ProjectContext())
+            {
+                var newStaffAccount = new StaffAccount
+                {
+                    Email = email.Trim(),
+                    Passwrd = password.Trim(),
+                    FirstName = firstname.Trim(),
+                    LastName = lastname.Trim()
+                };
+
+                db.StaffAccounts.Add(newStaffAccount);
+                db.SaveChanges();
+            }
+        }
+
+        public List<string> RetrieveAllEmailsSTAFF()
+        {
+            using (var db = new TT_ProjectContext())
+            {
+                List<string> emailListSTAFF = new List<string>();
+                foreach (var item in db.StaffAccounts)
+                {
+                    emailListSTAFF.Add(item.Email);
+                }
+                return emailListSTAFF;
+
+            }
+        }
+
+        public Dictionary<string, string> RetrieveAllEmailsPasswordsSTAFF()
+        {
+            using (var db = new TT_ProjectContext())
+            {
+                Dictionary<string, string> emailPassSTAFF = new Dictionary<string, string>();
+                foreach (var item in db.StaffAccounts)
+                {
+                    emailPassSTAFF.Add(item.Email, item.Passwrd);
+                }
+                return emailPassSTAFF;
+            }
+        }
+
+        public void UpdateStaff(string email, string firstname, string lastname)
+        {
+            using (var db = new TT_ProjectContext())
+            {
+                SelectedStaff = db.StaffAccounts.Where(c => c.Email == email).FirstOrDefault();
+                //setSelectedRider(email);
+                SelectedStaff.FirstName = firstname;
+                SelectedStaff.LastName = lastname;
+
+                db.SaveChanges();
+            }
+        }
+
+        public void DeleteRider(int riderId)
+        {
+
+            using (var db = new TT_ProjectContext())
+            {
+                var selectedRider =
+            from b in db.RiderAccounts
+            where b.RiderId == riderId
+            select b;
+
+                var selectedBikes =
+            from b in db.Bikes
+            where b.RiderId == riderId
+            select b;
+
+                var selectedEntries =
+            from b in db.Entries
+            where b.RiderId == riderId
+            select b;
+
+                db.Bikes.RemoveRange(selectedBikes);
+                db.Entries.RemoveRange(selectedEntries);
+                db.RiderAccounts.RemoveRange(selectedRider);
+
+
+                db.SaveChanges();
+            }
+        }
     }
 }
 

@@ -66,3 +66,9 @@ C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\TT_Project
 C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\TT_Project_WPF.dll
 C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\TT_Project_WPF.pdb
 C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\TT_Project_WPF.genruntimeconfig.cache
+C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\Staff_Rider_Selection.g.cs
+C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\Staff_Rider_Selection.baml
+C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\Staff_Home.g.cs
+C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\Staff_Home.baml
+C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\Staff_Users.g.cs
+C:\TT_Project\TT_Project_Model\TT_Project_WPF\obj\Debug\netcoreapp3.1\Staff_Users.baml
