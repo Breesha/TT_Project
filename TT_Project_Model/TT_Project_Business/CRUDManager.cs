@@ -334,9 +334,9 @@ namespace TT_Project_Business
             using (var db = new TT_ProjectContext())
             {
                 var selectedRider =
-            from b in db.RiderAccounts
-            where b.RiderId == riderId
-            select b;
+            from ra in db.RiderAccounts
+            where ra.RiderId == riderId
+            select ra;
 
                 var selectedBikes =
             from b in db.Bikes
@@ -344,9 +344,9 @@ namespace TT_Project_Business
             select b;
 
                 var selectedEntries =
-            from b in db.Entries
-            where b.RiderId == riderId
-            select b;
+            from e in db.Entries
+            where e.RiderId == riderId
+            select e;
 
                 db.Bikes.RemoveRange(selectedBikes);
                 db.Entries.RemoveRange(selectedEntries);

@@ -235,3 +235,34 @@ Despite some challenges faced when linking the navigation windows and the select
 
 
 
+# Christmas Improvements
+
+## Sprint 7
+
+### Sprint Goal
+
+* [ ] Create Staff section WPF
+* [ ] Create User selection section WPF
+* [ ] User Story 2.1 - Create staff account
+* [ ] User Story 2.2 - Staff passwords
+* [ ] User Story 2.3 - Login in staff
+* [ ] User Story 5.1 - Staff view riders
+* [ ] User Story 5.2 - Staff view entries
+* [ ] User Story 5.3 - Staff bike view
+* [ ] User Story 5.4 - Staff review rider
+* [ ] User Story 5.5 - Staff entry delete button
+* [ ] User Story 5.6 - Staff bike delete button
+* [ ] User Story 5.7 - Staff rider delete button
+* [ ] Push changes
+
+### Sprint Review
+
+This sprint's duration was longer, taking two days to complete the tasks, due to not having a consistent amount of time in one day to produce the work. The staff section was added easily as it was very similar to the rider process.
+
+A user selection page with staff and rider buttons to direct the user to the desired account type. The staff approach of a pending and approve section was changed to a simple delete button for the rider account, entries and bikes for the selected rider.
+
+Further improvements could be made by adding a window popup when deleting the rider account as a whole. It was also found from pair programming that the rider and staff accounts could be combined to remove copied and repeated code, as well as changing the name of methods and properties to match naming conventions.
+
+### Sprint Retrospective
+
+Good use of time, and tasks were simplified to help with productivity whilst also meeting the same goal.
