@@ -47,28 +47,14 @@ namespace TT_Project_WPF
             else
             {
                 _crudManager.CreateRiderAccount(TextRegEmail.Text, TextRegPass.Text, TextRegFNam.Text, TextRegLNam.Text, Convert.ToDateTime(RegCalender.SelectedDate), TextRegNat.Text, TextRegExp.Text);
-                //object selected = _crudManager.CreateRiderAccount(TextRegEmail.Text, TextRegPass.Text, TextRegFNam.Text, TextRegLNam.Text, TextRegDofB.Text, TextRegNat.Text, TextRegExp.Text);
-                //_crudManager.RetrieveAllEmails().Contains(TextRegEmail.Text);
-                //_crudManager.RetrieveAllRider();
-                //LabRegComment.Content = "";
-                //TextRegEmail.Text = "";
-                //TextRegPass.Text = "";
-                //TextRegFNam.Text = "";
-                //TextRegLNam.Text = "";
-                //TextRegDofB.Text = "";
-                //TextRegNat.Text = "";
-                //TextRegExp.Text = "";
+                
                 Project_Users projectuserpage = new Project_Users(TextRegEmail.Text);
                 this.NavigationService.Navigate(projectuserpage);
-
             }
-            
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            var email = TextLogEmail.Text;
-
 
             if (TextLogEmail.Text == "" || PassLogPass.Password == "")
             {
@@ -80,8 +66,6 @@ namespace TT_Project_WPF
                 {
                     if (_crudManager.RetrieveAllEmailsPasswords().ContainsValue(PassLogPass.Password))
                     {
-                        //var selected = _crudManager.RetrieveAllEmails().Contains(TextLogEmail.Text);
-                        //Application.Current.Resources.Add("Email", TextLogEmail.Text);
                         Project_Users projectuserpage = new Project_Users(TextLogEmail.Text);
                         this.NavigationService.Navigate(projectuserpage);
                     }

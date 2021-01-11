@@ -25,38 +25,7 @@ namespace TT_Project_WPF
         public MainWindow()
         {
             InitializeComponent();
-            //PopulateListBox();
         }
 
-        //private void PopulateListBox()
-        //{
-        //    ListViewRiders.ItemsSource = _crudManager.RetrieveAllRider();
-        //}
-
-        //private void PopulateRiderFields()
-        //{
-        //    if (_crudManager.SelectedRider != null)
-        //    {
-        //        LabelId.Content = _crudManager.SelectedRider.RiderId;
-        //        TextFName.Text = _crudManager.SelectedRider.FirstName;
-        //        TextLName.Text = _crudManager.SelectedRider.LastName;
-        //        TextDofB.Text = _crudManager.SelectedRider.DateOfBirth;
-        //        TextNation.Text = _crudManager.SelectedRider.Nationality;
-        //        TextExp.Text = _crudManager.SelectedRider.Experience;
-
-        //        LabelAddId.Content = _crudManager.SelectedRider.RiderId;
-
-        //        LabelAddBRId.Content = _crudManager.SelectedRider.RiderId;
-        //    }
-        //}
-
-        //private void ListBoxRider_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        //{
-        //    if (ListViewRiders.SelectedItem != null)
-        //    {
-        //        _crudManager.SetSelectedRider(ListViewRiders.SelectedItem);
-        //        PopulateRiderFields();
-        //    }
-        //}
     }
 }

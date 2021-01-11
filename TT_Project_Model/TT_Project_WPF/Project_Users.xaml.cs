@@ -22,12 +22,10 @@ namespace TT_Project_WPF
     public partial class Project_Users : Page
     {
         private CRUDManager _crudManager = new CRUDManager();
-        //string email;
+        
         public Project_Users()
         {
             InitializeComponent();
-            
-
         }
 
 
@@ -37,18 +35,12 @@ namespace TT_Project_WPF
             PopulateRiderFields(receivedEmail);
             PopulateListRaceEntries(receivedEmail);
             PopulateListBikeEntries(receivedEmail);
-
         }
 
-        //private void PopulateRiderFields()
-        //{
-        //    LabelEmail.Content = Application.Current.Resources["Email"];
-
-        //}
 
         private void PopulateRiderFields(string email)
         {
-            _crudManager.setSelectedRider(email);
+            _crudManager.ChoosingSelectedRider(email);
             
                 LabelEmail.Content = _crudManager.SelectedRider.Email;
                 LabelId.Content = _crudManager.SelectedRider.RiderId;
@@ -73,7 +65,6 @@ namespace TT_Project_WPF
 
         private void PopulateListRaceEntries(string email)
         {
-            
             ListViewEntries.ItemsSource = _crudManager.RetrieveAllEntryDetails(email);
         }
 
@@ -131,11 +122,7 @@ namespace TT_Project_WPF
             else
             {
                 _crudManager.UpdateRider(LabelEmail.Content.ToString(), TextFName.Text, TextLName.Text,Convert.ToDateTime(UpdCalender.SelectedDate), TextNation.Text, TextExp.Text);
-                //TextFName.Text = "";
-                //TextLName.Text = "";
-                //TextDofB.Text = "";
-                //TextNation.Text = "";
-                //TextExp.Text = "";
+                
                 PopulateRiderFields(LabelEmail.Content.ToString());
             }
         }
@@ -155,8 +142,7 @@ namespace TT_Project_WPF
                 TextBMake.Text = "";
                 TextBSpon.Text = "";
                 ListBikeEntriesiD.ItemsSource = null;
-                //ListBikeEntriesMake.ItemsSource = null;
-                //ListBikeEntriesSpons.ItemsSource = null;
+                
                 PopulateListBikeEntries(LabelEmail.Content.ToString());
             }
 
@@ -169,7 +155,6 @@ namespace TT_Project_WPF
             if (ListViewEntries.SelectedItem != null)
             {
                 _crudManager.SetSelectedEntry(ListViewEntries.SelectedItem);
-
             }
         }
 

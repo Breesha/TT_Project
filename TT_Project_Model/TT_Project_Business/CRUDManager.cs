@@ -16,7 +16,7 @@ namespace TT_Project_Business
             SelectedRider = (RiderAccount)selectedItem;
         }
 
-        public void setSelectedRider(string email)
+        public void ChoosingSelectedRider(string email)
         {
             using (var db = new TT_ProjectContext())
             {
@@ -29,7 +29,6 @@ namespace TT_Project_Business
         public void SetSelectedEntry(object selectedItem)
         {
             SelectedEntry = (Entry)selectedItem;
-            int selentid = SelectedEntry.EntryId;
         }
 
         public Bike SelectedBike { get; set; }
@@ -133,16 +132,10 @@ namespace TT_Project_Business
                         Nationality = nationality.Trim(),
                         Experience = experience.Trim()
                     };
-                ////var dOfB = Convert.ToDateTime(dateofbirth);
-                //if ( password.Length > 5) //(DateTime.Now.Date - dateofbirth.Date).TotalDays / 365.25) >= 21 &&
-                //{
+                
                     db.RiderAccounts.Add(newRiderAccount);
                     db.SaveChanges();
-                //}
-                //else
-                //{
-                //    db.SaveChanges();
-                //}
+                
 
             }
         }
@@ -152,7 +145,7 @@ namespace TT_Project_Business
             using (var db = new TT_ProjectContext())
             {
                 SelectedRider = db.RiderAccounts.Where(c => c.Email == email).FirstOrDefault();
-                //setSelectedRider(email);
+                
                 SelectedRider.FirstName = firstname;
                 SelectedRider.LastName = lastname;
                 SelectedRider.DateOfBirth = dateofbirth.ToShortDateString();
@@ -183,7 +176,6 @@ namespace TT_Project_Business
 
         public void DeleteBike(int bikeid)
         {
-
             using (var db = new TT_ProjectContext())
             {
                 var selectedBike =
@@ -193,14 +185,12 @@ namespace TT_Project_Business
 
                 db.Bikes.RemoveRange(selectedBike);
 
-
                 db.SaveChanges();
             }
         }
 
         public void CreateRaceEntry(int riderid, int raceid)
         {
-
             using (var db = new TT_ProjectContext())
             {
                 var newEntry = new Entry
@@ -212,16 +202,6 @@ namespace TT_Project_Business
                     db.Entries.Add(newEntry);
                     db.SaveChanges();
                 
-
-                //foreach (var item in db.Entries)
-                //{
-                //    if(item.RiderId==riderid && item.RaceId== raceid)
-                //    {
-                //        db.Entries.Remove(newEntry);
-                //        db.SaveChanges();
-                //    }
-                   
-                //}
                 
             }
         }
@@ -255,7 +235,7 @@ namespace TT_Project_Business
             SelectedStaff = (StaffAccount)selectedItem;
         }
 
-        public void setSelectedStaff(string email)
+        public void ChoosingSelectedStaff(string email)
         {
             using (var db = new TT_ProjectContext())
             {
@@ -320,7 +300,7 @@ namespace TT_Project_Business
             using (var db = new TT_ProjectContext())
             {
                 SelectedStaff = db.StaffAccounts.Where(c => c.Email == email).FirstOrDefault();
-                //setSelectedRider(email);
+                
                 SelectedStaff.FirstName = firstname;
                 SelectedStaff.LastName = lastname;
 
@@ -358,21 +338,3 @@ namespace TT_Project_Business
         }
     }
 }
-
-
-
-//public void CreateStaffInfo(int staffid, string firstname, string lastname)
-//{
-
-//    using (var db = new TT_ProjectContext())
-//    {
-//        var newStaff = new staff
-//        {
-//            FirstName = firstname.Trim(),
-//            LastName = lastname.Trim()
-//        };
-
-//        db.staff.Add(newStaff);
-//        db.SaveChanges();
-//    }
-//}

@@ -36,7 +36,7 @@ namespace TT_Project_WPF
 
         private void PopulateStaffFields(string email)
         {
-            _crudManager.setSelectedStaff(email);
+            _crudManager.ChoosingSelectedStaff(email);
 
             LabelEmail.Content = _crudManager.SelectedStaff.Email;
             LabelId.Content = _crudManager.SelectedStaff.StaffId;
@@ -46,7 +46,7 @@ namespace TT_Project_WPF
 
         private void PopulateRiderFields(string email)
         {
-            _crudManager.setSelectedRider(email);
+            _crudManager.ChoosingSelectedRider(email);
 
             RiderLabelId.Content = _crudManager.SelectedRider.RiderId;
             RiderTextFName.Text = _crudManager.SelectedRider.FirstName;

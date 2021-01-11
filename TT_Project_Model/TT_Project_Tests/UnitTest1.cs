@@ -15,19 +15,6 @@ namespace TT_Project_Tests
         {
             using (var db = new TT_ProjectContext())
             {
-                //var newRider = new RiderAccount
-                //{
-                //    Email = "breesha@hotmail.com",
-                //    Passwrd = "password",
-                //    FirstName = "Breesha",
-                //    LastName = "Foxton",
-                //    DateOfBirth = "24/06/1998",
-                //    Nationality = "Manx",
-                //    Experience = "no rider experience"
-                //};
-                //db.RiderAccounts.Add(newRider);
-                //db.SaveChanges();
-
 
             }
         }

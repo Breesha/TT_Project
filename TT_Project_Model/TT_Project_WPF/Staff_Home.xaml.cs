@@ -50,9 +50,6 @@ namespace TT_Project_WPF
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            var email = TextLogEmail.Text;
-
-
             if (TextLogEmail.Text == "" || PassLogPass.Password == "")
             {
                 LabLogComment.Content = "Every box needs data";
