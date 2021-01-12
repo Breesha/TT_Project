@@ -6,10 +6,14 @@ namespace TT_Project_Model
 {
     public interface IRiderAccountService
     {
-        //List<Customers> GetCustomerList();
-        //Customers GetCustomerById(string customerId);
-        //void CreateCustomer(Customers customer);
-        //void UpdateCustomer();
-        //void DeleteCustomer(string customerId);
+        void CreateRiderAccount(RiderAccount rideraccount);
+        void UpdateRider();
+        void DeleteRiderAccount(int riderID);
+        RiderAccount GetRiderAccountByEmail(string riderEmail);
+        RiderAccount GetRiderAccountByID(int riderID);
+        List<RiderAccount> GetRiderAccountList();
+        List<Bike> GetRiderBikeByID(int riderID);
+        List<Entry> GetRiderEntryByID(int riderID);
+        
     }
 }

@@ -237,7 +237,7 @@ namespace TT_Project_WPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TT_Project_WPF;V1.0.0.0;component/project_users.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TT_Project_WPF;component/project_users.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Project_Users.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

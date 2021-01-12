@@ -88,7 +88,7 @@ namespace TT_Project_Model
                 //var newRider = new RiderAccount
                 //{
                 //    Email = "deanharrison@hotmail.com",
-                //    Passwrd = "password2",
+                //    Passwrd = "password",
                 //    FirstName = "Dean",
                 //    LastName = "Harrison",
                 //    DateOfBirth = "01/05/1985",
@@ -129,6 +129,32 @@ namespace TT_Project_Model
                 //where ra.Email == "Robert" //|| ra.Email == "steve" //|| ra.RiderId == 38
                 //select ra;
                 //db.RiderAccounts.RemoveRange(deleteRider);
+                //db.SaveChanges();
+
+                //var newRider = new RiderAccount
+                //{
+                //    Email = "anneloft@hotmail.com",
+                //    Passwrd = "password",
+                //    FirstName = "Anne",
+                //    LastName = "Loft",
+                //    DateOfBirth = "01/05/1985",
+                //    Nationality = "English",
+                //    Experience = "No known experience"
+                //};
+                //db.RiderAccounts.Add(newRider);
+                //db.SaveChanges();
+
+                //var newRider10 = new RiderAccount
+                //{
+                //    Email = "andyloft@hotmail.com",
+                //    Passwrd = "password",
+                //    FirstName = "Andy",
+                //    LastName = "Loft",
+                //    DateOfBirth = "01/05/1985",
+                //    Nationality = "English",
+                //    Experience = "Mechanic - limited racing experience"
+                //};
+                //db.RiderAccounts.Add(newRider10);
                 //db.SaveChanges();
 
             }

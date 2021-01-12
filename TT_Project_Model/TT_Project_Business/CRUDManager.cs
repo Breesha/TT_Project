@@ -8,6 +8,23 @@ namespace TT_Project_Business
 {
     public class CRUDManager
     {
+        private IRiderAccountService _service;
+
+        public CRUDManager(IRiderAccountService service)
+        {
+            if (service==null)
+            {
+                throw new NotImplementedException();
+            }
+
+            _service = service;
+        }
+
+        public CRUDManager()
+        {
+            _service = new RiderAccountService(new TT_ProjectContext());
+        }
+
         public RiderAccount SelectedRider { get; set; }
 
 
@@ -18,10 +35,13 @@ namespace TT_Project_Business
 
         public void ChoosingSelectedRider(string email)
         {
-            using (var db = new TT_ProjectContext())
-            {
-                SelectedRider = db.RiderAccounts.Where(e => e.Email.Trim() == email.Trim()).FirstOrDefault();
-            }
+            SelectedRider = _service.GetRiderAccountByEmail(email);
+        }
+
+        public RiderAccount RetrieveSelectedRiderAccount(int riderID)
+        {
+            // for Moq tests only
+            return _service.GetRiderAccountByID(riderID);
         }
 
         public Entry SelectedEntry { get; set; }
@@ -41,10 +61,7 @@ namespace TT_Project_Business
 
         public List<RiderAccount> RetrieveAllRider()
         {
-            using (var db = new TT_ProjectContext())
-            {
-                return db.RiderAccounts.ToList();
-            }
+            return _service.GetRiderAccountList();
         }
 
 
@@ -120,9 +137,7 @@ namespace TT_Project_Business
 
         public void CreateRiderAccount(string email, string password, string firstname, string lastname, DateTime dateofbirth, string nationality, string experience)
         {
-            using (var db = new TT_ProjectContext())
-            {
-                    var newRiderAccount = new RiderAccount
+                    var newRiderAccount = new RiderAccount()
                     {
                         Email = email.Trim(),
                         Passwrd = password.Trim(),
@@ -132,28 +147,21 @@ namespace TT_Project_Business
                         Nationality = nationality.Trim(),
                         Experience = experience.Trim()
                     };
-                
-                    db.RiderAccounts.Add(newRiderAccount);
-                    db.SaveChanges();
-                
 
-            }
+            _service.CreateRiderAccount(newRiderAccount);
         }
 
         public void UpdateRider(string email, string firstname, string lastname, DateTime dateofbirth, string nationality, string experience)
         {
-            using (var db = new TT_ProjectContext())
-            {
-                SelectedRider = db.RiderAccounts.Where(c => c.Email == email).FirstOrDefault();
+                SelectedRider = _service.GetRiderAccountByEmail(email);
                 
                 SelectedRider.FirstName = firstname;
                 SelectedRider.LastName = lastname;
                 SelectedRider.DateOfBirth = dateofbirth.ToShortDateString();
                 SelectedRider.Nationality = nationality;
                 SelectedRider.Experience = experience;
-                
-                db.SaveChanges();
-            }
+
+            _service.UpdateRider();
         }
 
 
@@ -310,31 +318,7 @@ namespace TT_Project_Business
 
         public void DeleteRider(int riderId)
         {
-
-            using (var db = new TT_ProjectContext())
-            {
-                var selectedRider =
-            from ra in db.RiderAccounts
-            where ra.RiderId == riderId
-            select ra;
-
-                var selectedBikes =
-            from b in db.Bikes
-            where b.RiderId == riderId
-            select b;
-
-                var selectedEntries =
-            from e in db.Entries
-            where e.RiderId == riderId
-            select e;
-
-                db.Bikes.RemoveRange(selectedBikes);
-                db.Entries.RemoveRange(selectedEntries);
-                db.RiderAccounts.RemoveRange(selectedRider);
-
-
-                db.SaveChanges();
-            }
+            _service.DeleteRiderAccount(riderId);
         }
     }
 }
